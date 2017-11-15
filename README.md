@@ -20,7 +20,7 @@ An installer of my usual programs coded in bash.
     - screenfetch
   - *EXTRA:* Manual installation *LIKE A BOSS!*
 
-### How to use
+### How to install:
 Clone this repository:
 `git chone https://github.com/mateus4k/InstallForMe`
 
