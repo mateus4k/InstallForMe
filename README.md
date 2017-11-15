@@ -22,7 +22,7 @@ An installer of my usual programs coded in bash.
 
 ### How to install:
 Clone this repository:
-`git chone https://github.com/mateus4k/InstallForMe`
+`git clone https://github.com/mateus4k/InstallForMe`
 
 Go to directory:
 `cd InstallForMe/`
