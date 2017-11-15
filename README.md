@@ -1,7 +1,4 @@
-   _ _|            |          |  |   ___|              \  |        | 
-     |  __ \   __| __|  _` |  |  |   |     _ \   __|  |\/ |   _ \  | 
-     |  |   |\__ \ |   (   |  |  |   __|  (   | |     |   |   __/ _| 
-   ___|_|  _|____/\__|\__,_| _| _|  _|   \___/ _|    _|  _| \___| _) 
+# *Install for Me!*
 An installer of my usual programs coded in bash.
 
 # How to use
