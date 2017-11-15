@@ -35,7 +35,7 @@ login(){
 } #sudo
 
 case $choise in
-    1) dropbox ;;
+1) dropbox ;;
 2) ffmpeg ;;
 3) firefox ;;
 4) pdfpc ;;
@@ -47,12 +47,12 @@ case $choise in
 10) others ;;
 11) manual ;;
 0)  echo "Exiting..."
-sleep 1
-exit ;;
+    sleep 1
+    exit ;;
 *) echo "Unknown option..."
-echo "Returning to menu..."
-sleep 2.5
-menu ;;
+   echo "Returning to menu..."
+   sleep 2.5
+   menu ;;
 esac
 } #menu
 
