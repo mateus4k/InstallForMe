@@ -18,7 +18,7 @@ An installer of my usual programs coded in bash.
     - python
     - vim
     - screenfetch
-  - *EXTRA:* Manual installation #LIKE A BOSS!#
+  - *EXTRA:* Manual installation *LIKE A BOSS!*
 
 ### How to use
 Clone this repository:
