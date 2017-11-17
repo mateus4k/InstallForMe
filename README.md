@@ -18,6 +18,7 @@ An installer of my usual programs coded in bash.
     - python
     - vim
     - screenfetch
+    - unrar
   - *EXTRA:* Manual installation *LIKE A BOSS!*
 
 ### How to install:
