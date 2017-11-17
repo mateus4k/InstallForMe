@@ -19,7 +19,7 @@ menu(){
     7 - Spotify
     8 - Stacer
     9 - Sublime Text
-    10 - Others tools (git, gcc, gdebi, python, vim, screenfetch)
+    10 - Others tools (git, gcc, gdebi, python, vim, screenfetch, unrar)
     11 - Manual installation LIKE A BOSS
     0 - Exit
 
@@ -126,7 +126,7 @@ sublime(){
 
 # git, gcc, gdebi, python, vim and screenfetch
 others(){
-    sudo apt install git gcc gdebi python2.7 python3 vim screenfetch
+    sudo apt install git gcc gdebi python2.7 python3 vim screenfetch unrar
     menu
 } #others
 
