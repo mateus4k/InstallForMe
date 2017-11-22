@@ -12,7 +12,7 @@ An installer of my usual programs coded in bash.
   - Stacer
   - Sublime Text
   - Others tools
-    - git
+    - gedita
     - gcc
     - gdebi
     - python
