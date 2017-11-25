@@ -19,6 +19,7 @@ An installer of my usual programs coded in bash.
     - vim
     - screenfetch
     - unrar
+    - redshift
   - *EXTRA:* Manual installation *LIKE A BOSS!*
 
 ### How to install:
