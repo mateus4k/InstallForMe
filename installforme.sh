@@ -10,18 +10,18 @@ menu(){
     echo "##############################################
 
     This script contains these installers:
-    1 - Dropbox (Nautilus)
-    2 - ffmpeg
-    3 - Mozila Firefox
-    4 - PDF - Presenter Console
-    5 - PFSensor
-    6 - Qbittorrent
-    7 - Spotify
-    8 - Stacer
-    9 - Sublime Text
-    10 - Others tools (gedit, gcc, gdebi, python, vim, screenfetch, unrar)
-    11 - Manual installation LIKE A BOSS
-    0 - Exit
+    [ 1 ] - Dropbox (Nautilus)
+    [ 2 ] - ffmpeg
+    [ 3 ] - Mozila Firefox
+    [ 4 ] - PDF - Presenter Console
+    [ 5 ] - PFSensor
+    [ 6 ] - Qbittorrent
+    [ 7 ] - Spotify
+    [ 8 ] - Stacer
+    [ 9 ] - Sublime Text
+    [ 10] - Others tools (gedit, gcc, gdebi, python, vim, screenfetch, unrar, redshift)
+    [ 11] - Manual installation LIKE A BOSS
+    [ 0 ] - Exit
 
 ##############################################"
     sleep 2
@@ -126,7 +126,7 @@ sublime(){
 
 # git, gcc, gdebi, python, vim and screenfetch
 others(){
-    sudo apt install gedit gcc gdebi python2.7 python3 vim screenfetch unrar
+    sudo apt install gedit gcc gdebi python2.7 python3 vim screenfetch unrar redshift
     menu
 } #others
 
