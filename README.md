@@ -6,7 +6,7 @@ An installer of my usual programs coded in bash.
   - ffmpeg
   - Mozila Firefox
   - PDF - Presenter Console
-  - PFSensor
+  - PSensor
   - Qbittorrent
   - Spotify Client
   - Stacer
