@@ -14,7 +14,7 @@ menu(){
     [ 2 ] - ffmpeg
     [ 3 ] - Mozila Firefox
     [ 4 ] - PDF - Presenter Console
-    [ 5 ] - PFSensor
+    [ 5 ] - PSensor
     [ 6 ] - Qbittorrent
     [ 7 ] - Spotify
     [ 8 ] - Stacer
@@ -39,7 +39,7 @@ case $choise in
 2) ffmpeg ;;
 3) firefox ;;
 4) pdfpc ;;
-5) pfsensor ;;
+5) psensor ;;
 6) qbittorrent ;;
 7) spotify ;;
 8) stacer ;;
@@ -87,10 +87,10 @@ pdfpc(){
     menu
 } #pdfpc
 
-pfsensor(){
+psensor(){
     sudo apt-get install lm-sensors
     sudo sensors-detect
-    sensors #test sensors
+    sudo apt-get install psensor  
     menu
 } #pfsensor
 
