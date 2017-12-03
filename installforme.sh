@@ -19,7 +19,7 @@ menu(){
     [ 7 ] - Spotify
     [ 8 ] - Stacer
     [ 9 ] - Sublime Text
-    [ 10] - Others tools (gedit, gcc, gdebi, python, vim, screenfetch, unrar, redshift)
+    [ 10] - Others tools (gcc, python, vim, unrar, redshift, etc...)
     [ 11] - Manual installation LIKE A BOSS
     [ 0 ] - Exit
 
@@ -58,11 +58,7 @@ esac
 
 #voids
 dropbox(){
-    sudo apt-get install git
-    git clone https://github.com/dropbox/nautilus-dropbox
-    ./configure
-    make
-    sudo make install
+    sudo apt-get install nautilus-dropbox
     menu
 } #dropbox
 
