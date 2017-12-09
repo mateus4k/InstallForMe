@@ -1,31 +1,38 @@
 #!/bin/bash
 clear
-echo "##############################################"
-echo "######  INSTALL  #############################"
-echo "###############  FOR  ########################"
-echo "####################  ME  ####################"
-echo "##############################################"
-echo "######## Created by: Mateus4k ################"
+
+#colors
+red='\033[1;31m'
+yellow='\033[1;33m'
+green='\033[01;32m'
+reset='\033[01;37m'
+
+echo -e "${green}==============================================${reset}"
+echo -e "${green}====${reset}    INSTALL    ${green}===========================${reset}"
+echo -e "${green}=============${reset}    FOR    ${green}======================${reset}"
+echo -e "${green}==================${reset}    ME    ${green}==================${reset}"
+echo -e "${green}=======${reset}      github.com/mateus4k      ${green}========${reset}"
 menu(){
-    echo "##############################################
+    echo -e "${green}==============================================${reset}
 
-    This script contains these installers:
-    [ 1 ] - Dropbox (Nautilus)
-    [ 2 ] - ffmpeg
-    [ 3 ] - Mozila Firefox
-    [ 4 ] - PDF - Presenter Console
-    [ 5 ] - PSensor
-    [ 6 ] - Qbittorrent
-    [ 7 ] - Spotify
-    [ 8 ] - Stacer
-    [ 9 ] - Sublime Text
-    [ 10] - Others tools (gcc, python, vim, unrar, redshift, etc...)
-    [ 11] - Manual installation LIKE A BOSS
-    [ 0 ] - Exit
+    ${yellow}This script contains these installers:${reset}
+    ${green}[ 1 ]${reset} - Dropbox (Nautilus)
+    ${green}[ 2 ]${reset} - ffmpeg
+    ${green}[ 3 ]${reset} - Mozila Firefox
+    ${green}[ 4 ]${reset} - PDF - Presenter Console
+    ${green}[ 5 ]${reset} - PSensor
+    ${green}[ 6 ]${reset} - Qbittorrent
+    ${green}[ 7 ]${reset} - Spotify
+    ${green}[ 8 ]${reset} - Stacer
+    ${green}[ 9 ]${reset} - Sublime Text
+    ${green}[ 10]${reset} - Others tools (gcc, python, vim, unrar, redshift, etc...)
+    ${green}[ 11]${reset} - Cisco Packet Tracer 7.1
+    ${green}[ 99]${reset} - Manual installation LIKE A BOSS
+    ${green}[ 0 ]${reset} - Exit
 
-##############################################"
-    sleep 2
-    echo -n "-> YOUR CHOISE: "
+${green}==============================================${reset}"
+    sleep 0.5
+    echo -ne "${yellow}-> YOUR CHOISE: ${reset}"
     read choise
 
 #sudo permission
@@ -45,7 +52,8 @@ case $choise in
 8) stacer ;;
 9) sublime ;;
 10) others ;;
-11) manual ;;
+11) packettracer ;;
+99) manual ;;
 0)  echo "Exiting..."
     sleep 1
     exit ;;
@@ -125,6 +133,18 @@ others(){
     sudo apt install gedit gcc gdebi python2.7 python3 vim screenfetch unrar redshift-gtk
     menu
 } #others
+
+packettracer(){
+    cd
+    mkdir ciscopacket
+    cd ciscopacket
+    wget -c http://www.labcisco.com.br/app/Cisco-PT-71-x64.tar.gz -O ciscopacket.tar.gz
+    sleep 1
+    tar -xzvf ciscopacket.tar.gz
+    sudo ./install
+    cd
+    menu
+} #packettracer
 
 manual(){
     echo "Enter the program you want to install (Maybe he's not in the repository...): "
