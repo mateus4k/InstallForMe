@@ -11,6 +11,7 @@ An installer of my usual programs coded in bash.
   - Spotify Client
   - Stacer
   - Sublime Text
+  - Cisco Packet Tracer 7.1
   - Others tools
     - gedit
     - gcc
