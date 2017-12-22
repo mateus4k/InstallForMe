@@ -130,7 +130,8 @@ sublime(){
 
 # git, gcc, gdebi, python, vim and screenfetch
 others(){
-    sudo apt install gedit gcc gdebi python2.7 python3 vim screenfetch unrar redshift-gtk
+    sudo apt install gedit gcc gdebi python2.7 python3 vim screenfetch unrar redshift-gtk ttf-mscorefonts-installer
+    sudo fc-cache
     menu
 } #others
 
