@@ -21,6 +21,7 @@ An installer of my usual programs coded in bash.
     - screenfetch
     - unrar
     - redshift
+    - arial ms font
   - *EXTRA:* Manual installation *LIKE A BOSS!*
 
 ### How to install:
