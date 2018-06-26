@@ -2,39 +2,44 @@
 An installer of my usual programs coded in bash.
 
 ### This repository include:
-  - Dropbox (for Nautilus)
+  - Dropbox (Nautilus)
   - ffmpeg
-  - Mozila Firefox
   - PDF - Presenter Console
   - PSensor
-  - Qbittorrent
-  - Spotify Client
-  - Stacer
+  - Spotify
   - Sublime Text
   - Cisco Packet Tracer 7.1
+  - Oh-My-Zsh
   - Others tools
-    - gedit
-    - gcc
     - gdebi
-    - python
+    - git
+    - python3
     - vim
     - screenfetch
     - unrar
     - redshift
-    - arial ms font
-  - *EXTRA:* Manual installation *LIKE A BOSS!*
+    - arial microsoft font
+  - *EXTRA:* Manual installation!
 
 ### How to install:
 Clone this repository:
-`git clone https://github.com/mateus4k/InstallForMe`
+```
+git clone https://github.com/mateus4k/InstallForMe
+```
 
 Go to directory:
-`cd InstallForMe/`
+```
+cd InstallForMe/
+```
 
 Grant full permission to script:
-`chmod 777 installforme.sh`
+```
+chmod 777 installforme.sh
+```
 
 Run!
-`./installforme`
+```
+./installforme
+```
 
 ### Enjoy! :sunglasses:
