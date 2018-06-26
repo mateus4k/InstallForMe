@@ -18,16 +18,13 @@ menu(){
     ${yellow}This script contains these installers:${reset}
     ${green}[ 1 ]${reset} - Dropbox (Nautilus)
     ${green}[ 2 ]${reset} - ffmpeg
-    ${green}[ 3 ]${reset} - Mozila Firefox
-    ${green}[ 4 ]${reset} - PDF - Presenter Console
-    ${green}[ 5 ]${reset} - PSensor
-    ${green}[ 6 ]${reset} - Qbittorrent
-    ${green}[ 7 ]${reset} - Spotify
-    ${green}[ 8 ]${reset} - Stacer
-    ${green}[ 9 ]${reset} - Sublime Text
-    ${green}[ 10]${reset} - Others tools (gcc, python, vim, unrar, redshift, etc...)
-    ${green}[ 11]${reset} - Cisco Packet Tracer 7.1
-    ${green}[ 99]${reset} - Manual installation LIKE A BOSS
+    ${green}[ 3 ]${reset} - PDF - Presenter Console
+    ${green}[ 4 ]${reset} - PSensor
+    ${green}[ 5 ]${reset} - Spotify
+    ${green}[ 6 ]${reset} - Sublime Text
+    ${green}[ 7 ]${reset} - Cisco Packet Tracer 7.1
+    ${green}[ 8 ]${reset} - Others tools (git, vim, unrar, redshift, etc...)
+    ${green}[ 99]${reset} - Manual installation
     ${green}[ 0 ]${reset} - Exit
 
 ${green}==============================================${reset}"
@@ -44,15 +41,12 @@ login(){
 case $choise in
 1) dropbox ;;
 2) ffmpeg ;;
-3) firefox ;;
-4) pdfpc ;;
-5) psensor ;;
-6) qbittorrent ;;
-7) spotify ;;
-8) stacer ;;
-9) sublime ;;
-10) others ;;
-11) packettracer ;;
+3) pdfpc ;;
+4) psensor ;;
+5) spotify ;;
+6) sublime ;;
+7) packettracer ;;
+8) others ;;
 99) manual ;;
 0)  echo "Exiting..."
     sleep 1
@@ -77,15 +71,6 @@ ffmpeg(){
     menu
 } #ffmpeg
 
-firefox(){
-    wget "https://download.mozilla.org/?product=firefox-latest&os=linux&lang=en-US" -O firefox.tar.bz2
-    sudo tar -jxvf  firefox.tar.bz2 -C /opt/
-    sudo mv /opt/firefox*/ /opt/firefox
-    sudo ln -sf /opt/firefox/firefox /usr/bin/firefox
-    echo -e '[Desktop Entry]\n Version=46.0.1\n Encoding=UTF-8\n Name=Mozilla Firefox\n Comment=Web Browser\n Exec=/opt/firefox/firefox\n Icon=/opt/firefox/browser/icons/mozicon128.png\n Type=Application\n Categories=Network' | sudo tee /usr/share/applications/firefox.desktop
-    menu
-} #firefox
-
 pdfpc(){
     sudo apt-get install pdf-presenter-console
     menu
@@ -98,13 +83,6 @@ psensor(){
     menu
 } #pfsensor
 
-qbittorrent(){
-    sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
-    sudo apt-get update
-    sudo apt-get install qbittorrent
-    menu
-} #qbittorrent
-
 spotify(){
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0DF731E45CE24F27EEEB1450EFDC8610341D9410
     echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
@@ -112,12 +90,6 @@ spotify(){
     sudo apt-get install spotify-client
     menu
 } #spotify
-
-stacer(){
-    wget https://github.com/oguzhaninan/Stacer/releases/download/v1.0.8/stacer_1.0.8_amd64.deb -O stacer.deb
-    sudo dpkg -i stacer.deb
-    menu
-} #stacer
 
 sublime(){
     wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -127,13 +99,6 @@ sublime(){
     sudo apt-get install sublime-text
     menu
 } #sublime
-
-# git, gcc, gdebi, python, vim and screenfetch
-others(){
-    sudo apt install gedit gcc gdebi python2.7 python3 vim screenfetch unrar redshift-gtk ttf-mscorefonts-installer
-    sudo fc-cache
-    menu
-} #others
 
 packettracer(){
     cd
@@ -146,6 +111,12 @@ packettracer(){
     cd
     menu
 } #packettracer
+
+others(){
+    sudo apt install gdebi git python3 vim screenfetch unrar redshift-gtk ttf-mscorefonts-installer fonts-powerline
+    sudo fc-cache
+    menu
+} #others
 
 manual(){
     echo "Enter the program you want to install (Maybe he's not in the repository...): "
