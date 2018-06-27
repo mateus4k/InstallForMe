@@ -117,11 +117,12 @@ zsh(){
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     sudo chsh -s $(which zsh)
-    echo "Please addd 'zsh-autosuggestions' to .zshrc in plugins and change theme do 'agnoster'"
+    echo "Please add 'zsh-autosuggestions' to .zshrc in plugins and change theme do 'agnoster'"
+    menu
 } #zsh
 
 others(){
-     sudo apt install gdebi git python3 vim screenfetch unrar redshift-gtk ttf-mscorefonts-installer 
+     sudo apt install gedit gdebi git python3 vim screenfetch unrar redshift-gtk ttf-mscorefonts-installer 
      sudo fc-cache
      menu
 } #others

@@ -11,6 +11,7 @@ An installer of my usual programs coded in bash.
   - Cisco Packet Tracer 7.1
   - Oh-My-Zsh
   - Others tools
+    - gedit
     - gdebi
     - git
     - python3
