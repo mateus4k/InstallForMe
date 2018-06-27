@@ -113,9 +113,11 @@ packettracer(){
 } #packettracer
 
 zsh(){
-    sudo apt install curl fonts-powerline
+    sudo apt install curl fonts-powerline zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    chsh -s /bin/zsh
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    sudo chsh -s $(which zsh)
+    echo "Please addd 'zsh-autosuggestions' to .zshrc in plugins and change theme do 'agnoster'"
 } #zsh
 
 others(){
