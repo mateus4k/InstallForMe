@@ -122,7 +122,7 @@ zsh(){
 } #zsh
 
 others(){
-     sudo apt install gedit gdebi git python3 vim screenfetch unrar redshift-gtk ttf-mscorefonts-installer 
+     sudo apt install gedit gdebi python3 vim screenfetch unrar redshift-gtk ttf-mscorefonts-installer nodejs transmission
      sudo fc-cache
      menu
 } #others

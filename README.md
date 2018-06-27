@@ -20,6 +20,8 @@ An installer of my usual programs coded in bash.
     - unrar
     - redshift
     - arial microsoft font
+    - nodejs
+    - transmission
   - *EXTRA:* Manual installation!
 
 ### How to install:
