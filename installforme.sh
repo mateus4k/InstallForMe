@@ -14,17 +14,20 @@ menu(){
     echo -e "${red}==============================================${reset}
 
     ${yellow}This script contains these installers:${reset}
-    ${red}[ 1 ]${reset} - Dropbox (Nautilus)
-    ${red}[ 2 ]${reset} - ffmpeg
-    ${red}[ 3 ]${reset} - PDF - Presenter Console
-    ${red}[ 4 ]${reset} - PSensor
-    ${red}[ 5 ]${reset} - Spotify
-    ${red}[ 6 ]${reset} - Sublime Text
-    ${red}[ 7 ]${reset} - Cisco Packet Tracer 7.1
-    ${red}[ 8 ]${reset} - Oh-My-Zsh
-    ${red}[ 9 ]${reset} - Others tools (git, vim, unrar, etc...)
-    ${red}[ 99]${reset} - Manual installation
-    ${red}[ 0 ]${reset} - Exit
+    ${red}>>${reset}  1   - Dropbox (Nautilus)
+    ${red}>>${reset}  2   - ffmpeg
+    ${red}>>${reset}  3   - PDF - Presenter Console
+    ${red}>>${reset}  4   - PSensor
+    ${red}>>${reset}  5   - Spotify
+    ${red}>>${reset}  6   - Sublime Text
+    ${red}>>${reset}  7   - Cisco Packet Tracer 7.1
+    ${red}>>${reset}  8   - Oh-My-Zsh
+    ${red}>>${reset}  9   - NodeJS
+    ${red}>>${reset}  10  - Google Chrome
+    ${red}>>${reset}  11  - Virtual Box 5.2
+    ${red}>>${reset}  88  - Others tools (git, vim, unrar, etc...)
+    ${red}>>${reset}  99  - Manual installation
+    ${red}>>${reset}  0   - Exit
 
 ${red}==============================================${reset}"
     sleep 0.5
@@ -46,7 +49,10 @@ case $choise in
 6) sublime ;;
 7) packettracer ;;
 8) zsh ;;
-9) others ;;
+9) nodejs ;;
+10) chrome ;;
+11) vb ;;
+88) others ;;
 99) manual ;;
 0)  echo "Exiting..."
     sleep 1
@@ -121,14 +127,32 @@ zsh(){
     menu
 } #zsh
 
+nodejs(){
+    curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    sudo apt-get install npm
+    menu
+} #nodejs
+
+chrome(){
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O chrome.deb; sudo dpkg -i chrome.deb; rm -f chrome.deb
+    menu
+} #chrome
+
+vb(){
+    sudo apt-get update
+    sudo apt-get install virtualbox-5.2
+    menu
+} #vb
+
 others(){
-     sudo apt install gedit gdebi python3 vim screenfetch unrar redshift-gtk ttf-mscorefonts-installer nodejs transmission
+     sudo apt install gedit gdebi python3 vim screenfetch unrar redshift-gtk ttf-mscorefonts-installer transmission
      sudo fc-cache
      menu
 } #others
 
 manual(){
-     echo "Enter the program you want to install (Maybe he's not in the repository...): "
+     echo "Enter the program you want to install (Maybe it's not in the repository...): "
      read program
      sudo apt-get install $program
      menu

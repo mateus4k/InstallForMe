@@ -10,6 +10,9 @@ An installer of my usual programs coded in bash.
   - Sublime Text
   - Cisco Packet Tracer 7.1
   - Oh-My-Zsh
+  - NodeJS LTS
+  - Chrome
+  - Virtual Box 5.2
   - Others tools
     - gedit
     - gdebi
@@ -20,7 +23,6 @@ An installer of my usual programs coded in bash.
     - unrar
     - redshift
     - arial microsoft font
-    - nodejs
     - transmission
   - *EXTRA:* Manual installation!
 
