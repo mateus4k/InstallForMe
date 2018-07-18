@@ -25,6 +25,7 @@ menu(){
     ${red}>>${reset}  9   - NodeJS
     ${red}>>${reset}  10  - Google Chrome
     ${red}>>${reset}  11  - Virtual Box 5.2
+    ${red}>>${reset}  12  - F.lux
     ${red}>>${reset}  88  - Others tools (git, vim, unrar, etc...)
     ${red}>>${reset}  99  - Manual installation
     ${red}>>${reset}  0   - Exit
@@ -52,6 +53,7 @@ case $choise in
 9) nodejs ;;
 10) chrome ;;
 11) vb ;;
+12) flux ;;
 88) others ;;
 99) manual ;;
 0)  echo "Exiting..."
@@ -66,56 +68,56 @@ esac
 
 #voids
 dropbox(){
-     sudo apt-get install nautilus-dropbox
-     menu
+    sudo apt-get install nautilus-dropbox
+    menu
 } #dropbox
 
 ffmpeg(){
-     sudo apt-add-repository ppa:jonathonf/ffmpeg-3
-     sudo apt-get update
-     sudo apt-get install ffmpeg
-     menu
+    sudo apt-add-repository ppa:jonathonf/ffmpeg-3
+    sudo apt-get update
+    sudo apt-get install ffmpeg
+    menu
 } #ffmpeg
 
 pdfpc(){
-     sudo apt-get install pdf-presenter-console
-     menu
+    sudo apt-get install pdf-presenter-console
+    menu
 } #pdfpc
 
 psensor(){
-     sudo apt-get install lm-sensors
-     sudo sensors-detect
-     sudo apt-get install psensor  
-     menu
+    sudo apt-get install lm-sensors
+    sudo sensors-detect
+    sudo apt-get install psensor  
+    menu
 } #pfsensor
 
 spotify(){
-     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0DF731E45CE24F27EEEB1450EFDC8610341D9410
-     echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-     sudo apt-get update
-     sudo apt-get install spotify-client
-     menu
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0DF731E45CE24F27EEEB1450EFDC8610341D9410
+    echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+    sudo apt-get update
+    sudo apt-get install spotify-client
+    menu
 } #spotify
 
 sublime(){
-     wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-     sudo apt-get install apt-transport-https
-     echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-     sudo apt-get update
-     sudo apt-get install sublime-text
+    wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+    sudo apt-get install apt-transport-https
+    echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+    sudo apt-get update
+    sudo apt-get install sublime-text
     menu
 } #sublime
 
 packettracer(){
-     cd
-     mkdir ciscopacket
-     cd ciscopacket
-     wget -c http://www.labcisco.com.br/app/Cisco-PT-71-x64.tar.gz -O ciscopacket.tar.gz
-     sleep 1
-     tar -xzvf ciscopacket.tar.gz
-     sudo ./install
-     cd
-     menu
+    cd
+    mkdir ciscopacket
+    cd ciscopacket
+    wget -c http://www.labcisco.com.br/app/Cisco-PT-71-x64.tar.gz -O ciscopacket.tar.gz
+    sleep 1
+    tar -xzvf ciscopacket.tar.gz
+    sudo ./install
+    cd
+    menu
 } #packettracer
 
 zsh(){
@@ -145,16 +147,24 @@ vb(){
     menu
 } #vb
 
+flux(){
+    sudo add-apt-repository ppa:nathan-renniewaldock/flux -y
+    sudo apt-get update
+    sudo apt-get -y install fluxgui git python-appindicator python-xdg python-pexpect python-gconf python-gtk2 python-glade2 libxxf86vm1 #f.lux + dependencies for Ubuntu/Debian
+    menu
+} #flux
+
 others(){
-     sudo apt install gedit gdebi python3 vim screenfetch unrar redshift-gtk ttf-mscorefonts-installer transmission
-     sudo fc-cache
-     menu
+    sudo apt install gedit gdebi python3 vim screenfetch unrar ttf-mscorefonts-installer transmission
+    sudo fc-cache
+    menu
 } #others
 
 manual(){
-     echo "Enter the program you want to install (Maybe it's not in the repository...): "
-     read program
-     sudo apt-get install $program
-     menu
+    echo 'Enter the program that you wanna install [Ex.: "sqlite3"]'
+    echo "(Maybe it isn't in the local repository...): "
+    read program
+    sudo apt-get install $program
+    menu
 } #manual
 menu

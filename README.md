@@ -1,7 +1,7 @@
 # *Install for Me!*
-An installer of my usual programs coded in bash.
+This is an installer of my usual programs for Linux.
 
-### This repository include:
+## Programs list:
   - Dropbox (Nautilus)
   - ffmpeg
   - PDF - Presenter Console
@@ -13,6 +13,7 @@ An installer of my usual programs coded in bash.
   - NodeJS LTS
   - Chrome
   - Virtual Box 5.2
+  - F.lux
   - Others tools
     - gedit
     - gdebi
@@ -21,12 +22,11 @@ An installer of my usual programs coded in bash.
     - vim
     - screenfetch
     - unrar
-    - redshift
     - arial microsoft font
     - transmission
-  - *EXTRA:* Manual installation!
+  - Extra: Manual installation
 
-### How to install:
+## How to install:
 Clone this repository:
 ```
 git clone https://github.com/mateus4k/InstallForMe
