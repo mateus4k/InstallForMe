@@ -24,7 +24,7 @@ This is an installer of my usual programs for Linux.
     - unrar
     - arial microsoft font
     - transmission
-  - Extra: Manual installation
+  - Extra: Manual installation & update tool
 
 ## How to install:
 Clone this repository:

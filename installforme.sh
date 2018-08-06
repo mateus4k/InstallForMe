@@ -28,6 +28,7 @@ menu(){
     ${red}>>${reset}  12  - F.lux
     ${red}>>${reset}  88  - Others tools (git, vim, unrar, etc...)
     ${red}>>${reset}  99  - Manual installation
+    ${red}>>${reset}  100 - Update All
     ${red}>>${reset}  0   - Exit
 
 ${red}==============================================${reset}"
@@ -56,6 +57,7 @@ case $choise in
 12) flux ;;
 88) others ;;
 99) manual ;;
+100) update ;;
 0)  echo "Exiting..."
     sleep 1
     exit ;;
@@ -164,4 +166,11 @@ manual(){
     sudo apt-get install $program
     menu
 } #manual
+
+update(){
+    sudo apt update
+    sudo apt upgrade -y
+    sudo apt autoremove -y
+    menu
+} #update
 menu
