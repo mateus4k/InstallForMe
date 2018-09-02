@@ -19,6 +19,7 @@ This is an installer of my usual programs for Linux.
   - Chrome
   - Virtual Box 5.2
   - F.lux
+  - Arc Theme & Icons
   - Others tools
     - gedit
     - gdebi

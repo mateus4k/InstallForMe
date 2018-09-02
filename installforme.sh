@@ -3,6 +3,8 @@ clear
 
 #colors
 red='\033[1;31m'
+green='\033[1;32m'
+blue='\033[1;34m'
 yellow='\033[1;33m'
 reset='\033[01;37m'
 
@@ -26,6 +28,7 @@ menu(){
     ${red}>>${reset}  10  - Google Chrome
     ${red}>>${reset}  11  - Virtual Box 5.2
     ${red}>>${reset}  12  - F.lux
+    ${red}>>${reset}  13  - Arc Theme & Icons
     ${red}>>${reset}  88  - Others tools (git, vim, unrar, etc...)
     ${red}>>${reset}  99  - Manual installation
     ${red}>>${reset}  100 - Update All
@@ -55,6 +58,7 @@ case $choise in
 10) chrome ;;
 11) vb ;;
 12) flux ;;
+13) arc ;;
 88) others ;;
 99) manual ;;
 100) update ;;
@@ -152,6 +156,38 @@ flux(){
     sudo apt-get -y install fluxgui git python-appindicator python-xdg python-pexpect python-gconf python-gtk2 python-glade2 libxxf86vm1 #f.lux + dependencies for Ubuntu/Debian
     menu
 } #flux
+
+arc(){
+    sudo add-apt-repository -y ppa:noobslab/themes
+    sudo add-apt-repository -y ppa:noobslab/icons
+    sudo apt-get update
+    sudo apt-get install arc-theme arc-icons
+
+    #menu icon
+    echo
+    echo -e "    ${red}>>${reset}  Choose a menu icon color:"
+    echo -ne "    ${red}>>${reset}  ${green}[green]${reset}/${blue}[blue]${reset}: "
+    read color
+
+    if [ "$color" = "green" ]; then
+	echo -e "    ${red}>>${reset}  Downloading..."
+	wget -qO logo_green.png https://i.imgur.com/ui51P3J.png;
+	sudo mv logo_green.png /home/$USER/Pictures/;
+	echo -e "    ${red}>>${reset}  Sucessfull! Your file is in ${yellow}/home/$USER/Pictures/${reset}";
+
+    elif [ "$color" = "blue" ]; then
+	echo -e "    ${red}>>${reset}  Downloading..."
+	wget -qO logo_blue.png https://i.imgur.com/Q8dlRjt.png;
+	echo -e "    ${red}>>${reset}  Sucessfull! Your file is in ${yellow}/home/$USER/Pictures/${reset}";
+	sudo mv logo_blue.png /home/$USER/Pictures/;
+
+    else
+	echo -e "    ${red}>>${reset}  Invalid option!";
+	sleep 2.5
+    fi
+menu
+} #arc
+
 
 others(){
     sudo apt install gedit gdebi python3 vim screenfetch unrar ttf-mscorefonts-installer transmission
