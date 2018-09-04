@@ -6,37 +6,35 @@ red='\033[1;31m'
 green='\033[1;32m'
 blue='\033[1;34m'
 yellow='\033[1;33m'
-reset='\033[01;37m'
+reset='\e[0m'
+bold='\033[01;37m'
+txtstyle='    \033[1;31m>>\e[0m  '
 
-echo -e "${red}==============================================${reset}"
-echo -e "${red}====${reset}    INSTALL    ${red}===========================${reset}"
-echo -e "${red}=============${reset}    FOR    ${red}======================${reset}"
-echo -e "${red}==================${reset}    ME    ${red}==================${reset}"
+echo -e "${red}=============== ${bold}INSTALL FOR ME ${red}===============${reset}"
 menu(){
-    echo -e "${red}==============================================${reset}
-
-    ${yellow}This script contains these installers:${reset}
-    ${red}>>${reset}  1   - Dropbox (Nautilus)
-    ${red}>>${reset}  2   - ffmpeg
-    ${red}>>${reset}  3   - PDF - Presenter Console
-    ${red}>>${reset}  4   - PSensor
-    ${red}>>${reset}  5   - Spotify
-    ${red}>>${reset}  6   - Sublime Text
-    ${red}>>${reset}  7   - Cisco Packet Tracer 7.1
-    ${red}>>${reset}  8   - Oh-My-Zsh
-    ${red}>>${reset}  9   - NodeJS
-    ${red}>>${reset}  10  - Google Chrome
-    ${red}>>${reset}  11  - Virtual Box 5.2
-    ${red}>>${reset}  12  - F.lux
-    ${red}>>${reset}  13  - Arc Theme & Icons
-    ${red}>>${reset}  88  - Others tools (git, vim, unrar, etc...)
-    ${red}>>${reset}  99  - Manual installation
-    ${red}>>${reset}  100 - Update All
-    ${red}>>${reset}  0   - Exit
-
+  echo -e "${red}==============================================${reset}
+${yellow}>> Software List:${reset}
+${txtstyle}1   - Dropbox (Nautilus)
+${txtstyle}2   - ffmpeg
+${txtstyle}3   - PDF - Presenter Console
+${txtstyle}4   - PSensor
+${txtstyle}5   - Spotify
+${txtstyle}6   - Sublime Text
+${txtstyle}7   - Cisco Packet Tracer 7.1
+${txtstyle}8   - Oh-My-Zsh
+${txtstyle}9   - NodeJS
+${txtstyle}10  - Google Chrome
+${txtstyle}11  - Virtual Box 5.2
+${txtstyle}12  - F.lux
+${txtstyle}13  - Arc Theme & Icons
+${txtstyle}14  - PhotoGIMP by Diolinux
+${txtstyle}88  - Others tools (git, vim, unrar, etc...)
+${txtstyle}99  - Manual installation
+${txtstyle}100 - Update All
+${txtstyle}0   - Exit
 ${red}==============================================${reset}"
     sleep 0.5
-    echo -ne "${yellow}-> YOUR CHOISE: ${reset}"
+    echo -ne "${yellow}>> YOUR CHOISE: ${reset}"
     read choise
 
 #sudo permission
@@ -59,15 +57,16 @@ case $choise in
 11) vb ;;
 12) flux ;;
 13) arc ;;
+14) photogimp ;;
 88) others ;;
 99) manual ;;
 100) update ;;
-0)  echo "Exiting..."
+0)  echo "${txtstyle}Exiting..."
     sleep 1
     exit ;;
-*) echo "Unknown option..."
-   echo "Returning to menu..."
-   sleep 2.5
+*) echo "${txtstyle}Unknown option..."
+   echo "${txtstyle}Returning to menu..."
+   sleep 2
    menu ;;
 esac
 } #menu
@@ -128,7 +127,7 @@ zsh(){
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     sudo chsh -s $(which zsh)
-    echo "Please add 'zsh-autosuggestions' to .zshrc in plugins and change theme do 'agnoster'"
+    echo "${txtstyle}Please add 'zsh-autosuggestions' to ${red}.zshrc${reset} in plugins and change theme to ${red}'agnoster'${reset}"
     menu
 } #zsh
 
@@ -165,29 +164,51 @@ arc(){
 
     #menu icon
     echo
-    echo -e "    ${red}>>${reset}  Choose a menu icon color:"
-    echo -ne "    ${red}>>${reset}  ${green}[green]${reset}/${blue}[blue]${reset}: "
+    echo -e "${txtstyle}Choose a menu icon color:"
+    echo -ne "${txtstyle}${green}[green]${reset}/${blue}[blue]${reset}: "
     read color
 
     if [ "$color" = "green" ]; then
-	echo -e "    ${red}>>${reset}  Downloading..."
+	echo -e "${txtstyle}Downloading..."
 	wget -qO logo_green.png https://i.imgur.com/ui51P3J.png;
 	sudo mv logo_green.png /home/$USER/Pictures/;
-	echo -e "    ${red}>>${reset}  Sucessfull! Your file is in ${yellow}/home/$USER/Pictures/${reset}";
+	echo -e "${txtstyle}Sucessfull! Your file is in ${yellow}/home/$USER/Pictures/${reset}";
 
     elif [ "$color" = "blue" ]; then
-	echo -e "    ${red}>>${reset}  Downloading..."
+	echo -e "${txtstyle}Downloading..."
 	wget -qO logo_blue.png https://i.imgur.com/Q8dlRjt.png;
-	echo -e "    ${red}>>${reset}  Sucessfull! Your file is in ${yellow}/home/$USER/Pictures/${reset}";
+	echo -e "${txtstyle}Sucessfull! Your file is in ${yellow}/home/$USER/Pictures/${reset}";
 	sudo mv logo_blue.png /home/$USER/Pictures/;
 
     else
-	echo -e "    ${red}>>${reset}  Invalid option!";
+	echo -e "${txtstyle}Invalid option!";
 	sleep 2.5
     fi
 menu
 } #arc
 
+photogimp(){
+    #install gimp    
+    sudo apt-get install gimp    
+
+    #backuping GIMP old data
+    gimp_bkp="/home/${USER}/.gimp-2.8"
+
+    if [ -d "${gimp_bkp}" ]; then
+	echo -e "${txtstyle}Creating GIMP data backup"
+	sudo mv "${gimp_bkp}" "/home/${USER}/.gimp-2.8.old"
+	echo -e "${txtstyle}Sucessfull! Your GIMP backup is in ${yellow}/home/$USER/.gimp-2.8.old${reset}";
+    fi
+    
+    #downloading photogimp
+    echo -e "${txtstyle}Downloading PhotoGIMP!"
+    wget -q "https://github.com/mateus4k/InstallForMe/blob/photogimp/gimp-2.8.tar.bz2?raw=true" -O "/home/$USER/gimp-2.8.tar.bz2" --show-progress
+    cd /home/$USER
+    tar -xjvf gimp-2.8.tar.bz2
+    sudo rm -rf gimp-2.8.tar.bz2
+    echo -e "${txtstyle}Sucessfull! Your new GIMP config is in ${yellow}/home/$USER/.gimp-2.8${reset}"
+    menu
+} #photogimp
 
 others(){
     sudo apt install gedit gdebi python3 vim screenfetch unrar ttf-mscorefonts-installer transmission
@@ -196,10 +217,10 @@ others(){
 } #others
 
 manual(){
-    echo 'Enter the program that you wanna install [Ex.: "sqlite3"]'
-    echo "(Maybe it isn't in the local repository...): "
+    echo -e "${txtstyle}Enter the program that you wanna install [Ex.: ${red}sqlite3{$reset}]"
+    echo -ne "${txtstyle}(Maybe it isn't in the local repository...): "
     read program
-    sudo apt-get install $program
+    sudo apt-get install -y $program
     menu
 } #manual
 
@@ -207,6 +228,7 @@ update(){
     sudo apt update
     sudo apt upgrade -y
     sudo apt autoremove -y
+    sudo apt autoclean
     menu
 } #update
 menu

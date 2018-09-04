@@ -1,3 +1,4 @@
+
 # *Install for Me!*
 This is an installer of my usual programs for Linux.
 
@@ -6,9 +7,8 @@ This is an installer of my usual programs for Linux.
 ![forks](https://img.shields.io/github/forks/mateus4k/InstallForMe.svg)
 ![license](https://img.shields.io/badge/license-GNU-brightgreen.svg)
 
-## Programs list:
+## Software list:
   - Dropbox (Nautilus)
-  - ffmpeg
   - PDF - Presenter Console
   - PSensor
   - Spotify
@@ -16,41 +16,30 @@ This is an installer of my usual programs for Linux.
   - Cisco Packet Tracer 7.1
   - Oh-My-Zsh
   - NodeJS LTS
-  - Chrome
+  - Google Chrome
   - Virtual Box 5.2
   - F.lux
   - Arc Theme & Icons
-  - Others tools
-    - gedit
-    - gdebi
-    - git
-    - python3
-    - vim
-    - screenfetch
-    - unrar
-    - arial microsoft font
-    - transmission
-  - Extra: Manual installation & update tool
+  - GIMP + PhotoGIMP by [Diolinux](https://www.diolinux.com.br/2017/04/photogimp-20171-gimp-photoshop-theme-download.html)
+  - Others tools (Gedit, Gdebi, Python3, Vim, Screenfetch, Unrar, [Arial Microsoft Font](https://www.vivaolinux.com.br/artigo/Fontes-da-Microsoft-Instalacao-no-Ubuntu-e-Fedora), ffmpeg and Transmission)
+  - Extra: Manual installation & easy update tool
 
 ## How to install:
 Clone this repository:
 ```
-git clone https://github.com/mateus4k/InstallForMe
+git clone https://github.com/mateus4k/installforme
 ```
-
 Go to directory:
 ```
-cd InstallForMe/
+cd installforme/
 ```
-
-Grant full permission to script:
+Grant permission to run:
 ```
-chmod 777 installforme.sh
+chmod 755 installforme.sh
 ```
-
 Run!
 ```
-./installforme
+./installforme.sh
 ```
 
 ### Enjoy! :sunglasses:
