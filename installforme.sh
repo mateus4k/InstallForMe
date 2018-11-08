@@ -28,7 +28,8 @@ ${txtstyle}11  - Virtual Box 5.2
 ${txtstyle}12  - F.lux
 ${txtstyle}13  - Arc Theme & Icons
 ${txtstyle}14  - PhotoGIMP by Diolinux
-${txtstyle}88  - Others tools (git, vim, unrar, etc...)
+${txtstyle}15  - Visual Studio Code
+${txtstyle}88  - Others tools (vim, unrar, etc...)
 ${txtstyle}99  - Manual installation
 ${txtstyle}100 - Update All
 ${txtstyle}0   - Exit
@@ -58,6 +59,7 @@ case $choise in
 12) flux ;;
 13) arc ;;
 14) photogimp ;;
+15) vscode ;;
 88) others ;;
 99) manual ;;
 100) update ;;
@@ -80,19 +82,19 @@ dropbox(){
 ffmpeg(){
     sudo apt-add-repository ppa:jonathonf/ffmpeg-3
     sudo apt-get update
-    sudo apt-get install ffmpeg
+    sudo apt-get install -y ffmpeg
     menu
 } #ffmpeg
 
 pdfpc(){
-    sudo apt-get install pdf-presenter-console
+    sudo apt-get install -y  pdf-presenter-console
     menu
 } #pdfpc
 
 psensor(){
-    sudo apt-get install lm-sensors
+    sudo apt-get install -y lm-sensors
     sudo sensors-detect
-    sudo apt-get install psensor  
+    sudo apt-get install -y psensor  
     menu
 } #pfsensor
 
@@ -103,10 +105,10 @@ spotify(){
 
 sublime(){
     wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-    sudo apt-get install apt-transport-https
+    sudo apt-get install -y apt-transport-https
     echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
     sudo apt-get update
-    sudo apt-get install sublime-text
+    sudo apt-get install -y sublime-text
     menu
 } #sublime
 
@@ -123,7 +125,7 @@ packettracer(){
 } #packettracer
 
 zsh(){
-    sudo apt install curl fonts-powerline zsh
+    sudo apt install -y curl fonts-powerline zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     sudo chsh -s $(which zsh)
@@ -133,8 +135,7 @@ zsh(){
 
 nodejs(){
     curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-    sudo apt-get install -y nodejs
-    sudo apt-get install npm
+    sudo apt-get install -y nodejs npm
     menu
 } #nodejs
 
@@ -145,14 +146,14 @@ chrome(){
 
 vb(){
     sudo apt-get update
-    sudo apt-get install virtualbox-5.2
+    sudo apt-get install -y virtualbox-5.2
     menu
 } #vb
 
 flux(){
     sudo add-apt-repository ppa:nathan-renniewaldock/flux -y
     sudo apt-get update
-    sudo apt-get -y install fluxgui git python-appindicator python-xdg python-pexpect python-gconf python-gtk2 python-glade2 libxxf86vm1 #f.lux + dependencies for Ubuntu/Debian
+    sudo apt-get -y install -y fluxgui git python-appindicator python-xdg python-pexpect python-gconf python-gtk2 python-glade2 libxxf86vm1 #f.lux + dependencies for Ubuntu/Debian
     menu
 } #flux
 
@@ -160,7 +161,7 @@ arc(){
     sudo add-apt-repository -y ppa:noobslab/themes
     sudo add-apt-repository -y ppa:noobslab/icons
     sudo apt-get update
-    sudo apt-get install arc-theme arc-icons
+    sudo apt-get install -y arc-theme arc-icons
 
     #menu icon
     echo
@@ -189,7 +190,7 @@ menu
 
 photogimp(){
     #install gimp    
-    sudo apt-get install gimp    
+    sudo apt-get install -y gimp    
 
     #backuping GIMP old data
     gimp_bkp="/home/${USER}/.gimp-2.8"
@@ -210,8 +211,14 @@ photogimp(){
     menu
 } #photogimp
 
+vscode(){
+    wget -q https://go.microsoft.com/fwlink/?LinkID=760868 -O vscode.deb --show-progress; sudo dpkg -i vscode.deb; rm -rf vscode.deb
+    menu
+} #vscode
+
+
 others(){
-    sudo apt install gedit gdebi python3 vim screenfetch unrar ttf-mscorefonts-installer transmission
+    sudo apt install -y gedit gdebi python3 vim screenfetch unrar ttf-mscorefonts-installer transmission
     sudo fc-cache
     menu
 } #others

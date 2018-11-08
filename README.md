@@ -21,6 +21,7 @@ This is an installer of my usual programs for Linux.
   - F.lux
   - Arc Theme & Icons
   - GIMP + PhotoGIMP by [Diolinux](https://www.diolinux.com.br/2017/04/photogimp-20171-gimp-photoshop-theme-download.html)
+  - Visual Studio Code
   - Others tools (Gedit, Gdebi, Python3, Vim, Screenfetch, Unrar, [Arial Microsoft Font](https://www.vivaolinux.com.br/artigo/Fontes-da-Microsoft-Instalacao-no-Ubuntu-e-Fedora), ffmpeg and Transmission)
   - Extra: Manual installation & easy update tool
 
