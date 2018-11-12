@@ -1,6 +1,5 @@
 #!/bin/bash
 clear
-
 #colors
 red='\033[1;31m'
 green='\033[1;32m'
@@ -8,12 +7,12 @@ blue='\033[1;34m'
 yellow='\033[1;33m'
 reset='\e[0m'
 bold='\033[01;37m'
-txtstyle='    \033[1;31m>>\e[0m  '
+txtstyle='  \033[1;31m>>\e[0m  '
 
-echo -e "${red}=============== ${bold}INSTALL FOR ME ${red}===============${reset}"
+echo -e "${red}============ ${bold}INSTALL FOR ME ${red}============${reset}"
 menu(){
-  echo -e "${red}==============================================${reset}
-${yellow}>> Software List:${reset}
+    echo -e "${red}========================================${reset}
+${yellow}>> Software List${reset}
 ${txtstyle}1   - Dropbox
 ${txtstyle}2   - ffmpeg
 ${txtstyle}3   - PDF - Presenter Console
@@ -29,88 +28,86 @@ ${txtstyle}12  - F.lux
 ${txtstyle}13  - Arc Theme & Icons
 ${txtstyle}14  - PhotoGIMP by Diolinux
 ${txtstyle}15  - Visual Studio Code
-${txtstyle}88  - Others tools (vim, unrar, etc...)
+${txtstyle}88  - Others (vim, unrar, etc...)
 ${txtstyle}99  - Manual installation
 ${txtstyle}100 - Update All
 ${txtstyle}0   - Exit
-${red}==============================================${reset}"
+${red}========================================${reset}"
+    
     sleep 0.5
     echo -ne "${yellow}>> YOUR CHOISE: ${reset}"
     read choise
 
-#sudo permission
-login(){
-    echo "[sudo] password for $USER: "
-    passwd $username
-} #sudo
+    #sudo permission
+    login(){
+        echo "[sudo] password for $USER: "
+        passwd $username
+    }
 
-case $choise in
-1) dropbox ;;
-2) ffmpeg ;;
-3) pdfpc ;;
-4) psensor ;;
-5) spotify ;;
-6) sublime ;;
-7) packettracer ;;
-8) zsh ;;
-9) nodejs ;;
-10) chrome ;;
-11) vb ;;
-12) flux ;;
-13) arc ;;
-14) photogimp ;;
-15) vscode ;;
-88) others ;;
-99) manual ;;
-100) update ;;
-0)  echo "${txtstyle}Exiting..."
-    sleep 1
-    exit ;;
-*) echo "${txtstyle}Unknown option..."
-   echo "${txtstyle}Returning to menu..."
-   sleep 2
-   menu ;;
-esac
-} #menu
+    case $choise in
+    1) dropbox ;;
+    2) ffmpeg ;;
+    3) pdfpc ;;
+    4) psensor ;;
+    5) spotify ;;
+    6) sublime ;;
+    7) packettracer ;;
+    8) zsh ;;
+    9) nodejs ;;
+    10) chrome ;;
+    11) vb ;;
+    12) flux ;;
+    13) arc ;;
+    14) photogimp ;;
+    15) vscode ;;
+    88) others ;;
+    99) manual ;;
+    100) update ;;
+    0)  echo "${txtstyle}Exiting..."
+        sleep 1
+        exit ;;
+    *) echo "${txtstyle}Unknown option..."
+        echo "${txtstyle}Returning to menu..."
+        sleep 2
+        menu ;;
+    esac
+}
 
-#voids
 dropbox(){
     echo -ne "${txtstyle}Do you use ${red}Nautilus${reset} or ${blue}others${reset}? "
     read drop
 
     if [ "$drop" = "Nautilus" ] || [ "$drop" = "nautilus" ]; then
-	sudo apt-get install -y nautilus-dropbox	
+	    sudo apt-get install -y nautilus-dropbox	
     else
-	echo "deu certo"
-	cd ~ &&  wget -qO - "https://www.dropbox.com/download?plat=lnx.x86_64" --show-progress | tar xzf -; ~/.dropbox-dist/dropboxd &
+	    cd ~ &&  wget -qO - "https://www.dropbox.com/download?plat=lnx.x86_64" --show-progress | tar xzf -; ~/.dropbox-dist/dropboxd &
     fi
-
     menu
-} #dropbox
+}
 
 ffmpeg(){
     sudo apt-add-repository ppa:jonathonf/ffmpeg-3
     sudo apt-get update
     sudo apt-get install -y ffmpeg
     menu
-} #ffmpeg
+}
 
 pdfpc(){
     sudo apt-get install -y  pdf-presenter-console
     menu
-} #pdfpc
+}
 
 psensor(){
     sudo apt-get install -y lm-sensors
     sudo sensors-detect
     sudo apt-get install -y psensor  
     menu
-} #pfsensor
+}
 
 spotify(){
     sudo apt-get install -y spotify-client
     menu
-} #spotify
+}
 
 sublime(){
     wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -119,7 +116,7 @@ sublime(){
     sudo apt-get update
     sudo apt-get install -y sublime-text
     menu
-} #sublime
+}
 
 packettracer(){
     cd
@@ -131,7 +128,7 @@ packettracer(){
     sudo ./install
     cd
     menu
-} #packettracer
+}
 
 zsh(){
     sudo apt install -y zsh
@@ -159,31 +156,31 @@ zsh(){
 	sudo usermod -s $(which zsh) ${USER}
     fi
     menu
-} #zsh
+}
 
 nodejs(){
     curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     sudo apt-get install -y nodejs npm
     menu
-} #nodejs
+}
 
 chrome(){
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O chrome.deb; sudo dpkg -i chrome.deb; rm -f chrome.deb
     menu
-} #chrome
+}
 
 vb(){
     sudo apt-get update
     sudo apt-get install -y virtualbox-5.2
     menu
-} #vb
+}
 
 flux(){
     sudo add-apt-repository ppa:nathan-renniewaldock/flux -y
     sudo apt-get update
     sudo apt-get -y install -y fluxgui git python-appindicator python-xdg python-pexpect python-gconf python-gtk2 python-glade2 libxxf86vm1 #f.lux + dependencies for Ubuntu/Debian
     menu
-} #flux
+}
 
 arc(){
     sudo add-apt-repository -y ppa:noobslab/themes
@@ -198,23 +195,23 @@ arc(){
     read color
 
     if [ "$color" = "green" ]; then
-	echo -e "${txtstyle}Downloading..."
-	wget -qO logo_green.png https://i.imgur.com/ui51P3J.png;
-	sudo mv logo_green.png /home/$USER/Pictures/;
-	echo -e "${txtstyle}Sucessfull! Your file is in ${yellow}/home/$USER/Pictures/${reset}";
+        echo -e "${txtstyle}Downloading..."
+        wget -qO logo_green.png https://i.imgur.com/ui51P3J.png;
+        sudo mv logo_green.png /home/$USER/Pictures/;
+        echo -e "${txtstyle}Sucessfull! Your file is in ${yellow}/home/$USER/Pictures/${reset}";
 
     elif [ "$color" = "blue" ]; then
-	echo -e "${txtstyle}Downloading..."
-	wget -qO logo_blue.png https://i.imgur.com/Q8dlRjt.png;
-	echo -e "${txtstyle}Sucessfull! Your file is in ${yellow}/home/$USER/Pictures/${reset}";
-	sudo mv logo_blue.png /home/$USER/Pictures/;
+        echo -e "${txtstyle}Downloading..."
+        wget -qO logo_blue.png https://i.imgur.com/Q8dlRjt.png;
+        echo -e "${txtstyle}Sucessfull! Your file is in ${yellow}/home/$USER/Pictures/${reset}";
+        sudo mv logo_blue.png /home/$USER/Pictures/;
 
     else
-	echo -e "${txtstyle}Invalid option!";
-	sleep 2.5
+        echo -e "${txtstyle}Invalid option!";
+        sleep 2
     fi
 menu
-} #arc
+}
 
 photogimp(){
     #install gimp    
@@ -224,9 +221,9 @@ photogimp(){
     gimp_bkp="/home/${USER}/.gimp-2.8"
 
     if [ -d "${gimp_bkp}" ]; then
-	echo -e "${txtstyle}Creating GIMP data backup"
-	sudo mv "${gimp_bkp}" "/home/${USER}/.gimp-2.8.old"
-	echo -e "${txtstyle}Sucessfull! Your GIMP backup is in ${yellow}/home/$USER/.gimp-2.8.old${reset}";
+        echo -e "${txtstyle}Creating GIMP data backup"
+        sudo mv "${gimp_bkp}" "/home/${USER}/.gimp-2.8.old"
+        echo -e "${txtstyle}Sucessfull! Your GIMP backup is in ${yellow}/home/$USER/.gimp-2.8.old${reset}";
     fi
     
     #downloading photogimp
@@ -237,19 +234,18 @@ photogimp(){
     sudo rm -rf gimp-2.8.tar.bz2
     echo -e "${txtstyle}Sucessfull! Your new GIMP config is in ${yellow}/home/$USER/.gimp-2.8${reset}"
     menu
-} #photogimp
+}
 
 vscode(){
     wget -q https://go.microsoft.com/fwlink/?LinkID=760868 -O vscode.deb --show-progress; sudo dpkg -i vscode.deb; rm -rf vscode.deb
     menu
-} #vscode
-
+}
 
 others(){
-    sudo apt install -y gedit gdebi python3 vim screenfetch unrar ttf-mscorefonts-installer transmission
+    sudo apt install -y gedit vim screenfetch unrar ttf-mscorefonts-installer transmission
     sudo fc-cache
     menu
-} #others
+}
 
 manual(){
     echo -e "${txtstyle}Enter the program that you wanna install [Ex.: ${red}sqlite3{$reset}]"
@@ -257,7 +253,7 @@ manual(){
     read program
     sudo apt-get install -y $program
     menu
-} #manual
+}
 
 update(){
     sudo apt update
@@ -265,5 +261,5 @@ update(){
     sudo apt autoremove -y
     sudo apt autoclean
     menu
-} #update
+}
 menu

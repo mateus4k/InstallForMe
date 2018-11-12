@@ -9,12 +9,13 @@ That's an installer of my usual softwares for Debian-based distributions.
 ## Software List
 ----------------
   - Dropbox (Nautilus and [Headless](https://www.dropbox.com/install?_tk=uj_merlin))
+  - ffmpeg
   - PDF - Presenter Console
   - PSensor
   - Spotify
   - Sublime Text 3
   - Cisco Packet Tracer 7.1
-  - Oh-My-Zsh
+  - Zsh + Oh-My-Zsh
   - NodeJS LTS
   - Google Chrome
   - Virtual Box 5.2
@@ -22,7 +23,7 @@ That's an installer of my usual softwares for Debian-based distributions.
   - Arc Theme & Icons
   - GIMP + PhotoGIMP 2017 by [Diolinux](https://www.diolinux.com.br/2017/04/photogimp-20171-gimp-photoshop-theme-download.html)
   - Visual Studio Code
-  - Others tools (Gedit, Gdebi, Python3, Vim, Screenfetch, Unrar, [Arial Microsoft Font](https://www.vivaolinux.com.br/artigo/Fontes-da-Microsoft-Instalacao-no-Ubuntu-e-Fedora), ffmpeg and Transmission)
+  - Others tools (Gedit, Vim, Screenfetch, Unrar, [Arial Microsoft Font](https://www.vivaolinux.com.br/artigo/Fontes-da-Microsoft-Instalacao-no-Ubuntu-e-Fedora) and Transmission)
   - Extra: Manual installation & easy update tool
 
 ### Installation
