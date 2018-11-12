@@ -134,11 +134,30 @@ packettracer(){
 } #packettracer
 
 zsh(){
-    sudo apt install -y curl fonts-powerline zsh
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    sudo apt install -y zsh
+
+    # delete old files
+    sudo rm -rf ~/.oh-my-zsh
+
+    # download oh-my-zsh
+    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 
+
+    # download plugin autosuggestions
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-    sudo chsh -s $(which zsh)
-    echo "${txtstyle}Please add 'zsh-autosuggestions' to ${red}.zshrc${reset} in plugins and change theme to ${red}'agnoster'${reset}"
+
+    # install agnoster theme font
+    sudo apt install -y fonts-powerline
+
+    # install zsh config file
+    sudo cp zshrc ~/.zshrc
+
+    if [ "$SHELL" != "/bin/zsh" ]; then
+	# for root
+	sudo usermod -s $(which zsh) root 
+
+	# for current user
+	sudo usermod -s $(which zsh) ${USER}
+    fi
     menu
 } #zsh
 
