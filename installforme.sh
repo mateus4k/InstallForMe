@@ -143,8 +143,8 @@ zsh(){
     git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 
 
     # download plugin autosuggestions
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+    
     # install agnoster theme font
     sudo apt install -y fonts-powerline
 

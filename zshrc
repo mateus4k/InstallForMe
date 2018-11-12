@@ -11,6 +11,9 @@ CASE_SENSITIVE="true"
 # Defining text editor 
 EDITOR=vim
 
+# Sourcing oh-my-zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # Comment this out to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
 
@@ -38,9 +41,6 @@ hash -d down="$HOME/Downloads/"
 # Search history of typed command with up/down keys
 bindkey "${terminfo[kcuu1]}" up-line-or-search
 bindkey "${terminfo[kcud1]}" down-line-or-search
-
-# Source EDA env functions
-#source $HOME/.dotfiles/eda_envs.sh
 
 # To pass env to sudo when running tlmgr do:
 # sudo env PATH="$PATH" tlmgr path add
