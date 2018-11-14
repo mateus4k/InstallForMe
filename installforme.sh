@@ -245,7 +245,7 @@ vscode(){
 }
 
 others(){
-    sudo apt install -y gedit vim screenfetch unrar ttf-mscorefonts-installer transmission
+    sudo apt install -y gedit vim neofetch unrar ttf-mscorefonts-installer transmission
     sudo fc-cache
     menu
 }

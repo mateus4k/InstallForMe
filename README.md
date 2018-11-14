@@ -23,7 +23,7 @@ That's an installer of my usual softwares for Debian-based distributions.
   - Arc Theme & Icons
   - GIMP + PhotoGIMP 2017 by [Diolinux](https://www.diolinux.com.br/2017/04/photogimp-20171-gimp-photoshop-theme-download.html)
   - Visual Studio Code
-  - Others tools (Gedit, Vim, Screenfetch, Unrar, [Arial Microsoft Font](https://www.vivaolinux.com.br/artigo/Fontes-da-Microsoft-Instalacao-no-Ubuntu-e-Fedora) and Transmission)
+  - Others tools (Gedit, Vim, Neofetch, Unrar, [Arial Microsoft Font](https://www.vivaolinux.com.br/artigo/Fontes-da-Microsoft-Instalacao-no-Ubuntu-e-Fedora) and Transmission)
   - Extra: Manual installation & easy update tool
 
 ### Installation
