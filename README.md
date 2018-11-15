@@ -1,41 +1,55 @@
 # Install for Me!
------------------
 That's an installer of my usual softwares for Debian-based distributions.
 
-[![HitCount](http://hits.dwyl.io/mateus4k/installforme.svg)](http://hits.dwyl.io/mateus4k/installforme)
-![issues](https://img.shields.io/github/issues/mateus4k/InstallForMe.svg)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+![HitCount][s1] ![issues][s2] ![contributions][s3]
+
+[s1]: http://hits.dwyl.io/mateus4k/installforme.svg
+[s2]: https://img.shields.io/github/issues/mateus4k/InstallForMe.svg
+[s3]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
 
 ## Software List
-----------------
-  - Dropbox (Nautilus and [Headless](https://www.dropbox.com/install?_tk=uj_merlin))
+  - Utilities
+	  - Dropbox (Nautilus and [Headless](https://www.dropbox.com/install?_tk=uj_merlin))
+	  - Spotify
+	  - Google Chrome
+	  -  Virtual Box 5.2
+	  - Cisco Packet Tracer 7.1
+      - F.lux
+      - Redshift
+
+  - Programming
+	  - Sublime Text 3
+	  - Visual Studio Code
+	  - NodeJS LTS
+
+  - Customization
+	  -  Zsh + Oh-My-Zsh
+      - Arc Theme & Icons
+	  - GIMP + PhotoGIMP 2017 by [Diolinux](https://www.diolinux.com.br/2017/04/photogimp-20171-gimp-photoshop-theme-download.html)
+
+### Others
+
   - ffmpeg
   - PDF - Presenter Console
   - PSensor
-  - Spotify
-  - Sublime Text 3
-  - Cisco Packet Tracer 7.1
-  - Zsh + Oh-My-Zsh
-  - NodeJS LTS
-  - Google Chrome
-  - Virtual Box 5.2
-  - F.lux
-  - Arc Theme & Icons
-  - GIMP + PhotoGIMP 2017 by [Diolinux](https://www.diolinux.com.br/2017/04/photogimp-20171-gimp-photoshop-theme-download.html)
-  - Visual Studio Code
-  - Others tools (Gedit, Vim, Neofetch, Unrar, [Arial Microsoft Font](https://www.vivaolinux.com.br/artigo/Fontes-da-Microsoft-Instalacao-no-Ubuntu-e-Fedora) and Transmission)
-  - Extra: Manual installation & easy update tool
+  - Gedit
+  - Vim
+  - Neofetch
+  - Unrar
+  - [Arial Microsoft Font](https://www.vivaolinux.com.br/artigo/Fontes-da-Microsoft-Instalacao-no-Ubuntu-e-Fedora)
+  - Transmission
+  - Manual installation & easy update tool
 
-### Installation
-----------------
+## Installation
 ```sh
 $ git clone https://github.com/mateus4k/installforme
 $ cd installforme/
 $ chmod 755 installforme.sh
 $ ./installforme.sh
 ```
-### Development
----------------
+
+## Development
+
 Want to contribute? Great!
 Please refer to each project's style guidelines and guidelines for submitting patches and additions. In general, we follow the "fork-and-pull" Git workflow.
 1. **Fork** the repo on GitHub
