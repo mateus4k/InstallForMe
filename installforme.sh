@@ -1,5 +1,6 @@
 #!/bin/bash
 clear
+
 #colors
 red='\033[1;31m'
 green='\033[1;32m'
@@ -9,6 +10,7 @@ reset='\e[0m'
 bold='\033[01;37m'
 txtstyle='  \033[1;31m>>\e[0m  '
 
+# header and menu
 echo -e "${red}============ ${bold}INSTALL FOR ME ${red}============${reset}"
 menu(){
     echo -e "${red}========================================${reset}
@@ -29,6 +31,7 @@ ${txtstyle}13  - Redshift
 ${txtstyle}14  - Arc Theme & Icons
 ${txtstyle}15  - PhotoGIMP by Diolinux
 ${txtstyle}16  - Visual Studio Code
+${txtstyle}17  - Telegram Desktop
 ${txtstyle}88  - Others (vim, unrar, etc...)
 ${txtstyle}99  - Manual installation
 ${txtstyle}100 - Update All
@@ -62,6 +65,7 @@ ${red}========================================${reset}"
     14) arc ;;
     15) photogimp ;;
     16) vscode ;;
+    17) telegram ;;
     88) others ;;
     99) manual ;;
     100) update ;;
@@ -248,6 +252,23 @@ photogimp(){
 vscode(){
     wget -q https://go.microsoft.com/fwlink/?LinkID=760868 -O vscode.deb --show-progress; sudo dpkg -i vscode.deb; rm -rf vscode.deb
     menu
+}
+
+telegram(){
+	# download telegram desktop	
+	wget https://updates.tdesktop.com/tlinux/tsetup.1.4.3.tar.xz -O telegram.tar.xz;
+
+	# uncompress and move the folder
+	sudo tar Jxf telegram.tar.xz -C /opt/; sudo mv /opt/Telegram*/ /opt/telegram
+
+	# create a desktop launcher
+	sudo ln -sf /opt/telegram/Telegram /usr/bin/telegram
+	echo -e '[Desktop Entry]\n Version=1.0\n Exec=/opt/telegram/Telegram\n Icon=Telegram\n Type=Application\n Categories=Application;Network;' | sudo tee /usr/share/applications/telegram.desktop;
+	sudo chmod +x /usr/share/applications/telegram.desktop
+	cp /usr/share/applications/telegram.desktop ~/Desktop
+
+	# remove the original file
+	rm -f telegram.tar.xz
 }
 
 others(){

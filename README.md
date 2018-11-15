@@ -12,7 +12,8 @@ That's an installer of my usual softwares for Debian-based distributions.
 	  - Dropbox (Nautilus and [Headless](https://www.dropbox.com/install?_tk=uj_merlin))
 	  - Spotify
 	  - Google Chrome
-	  -  Virtual Box 5.2
+	  - Telegram Desktop
+	  - Virtual Box 5.2
 	  - Cisco Packet Tracer 7.1
       - F.lux
       - Redshift
