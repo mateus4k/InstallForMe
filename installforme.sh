@@ -25,9 +25,10 @@ ${txtstyle}9   - NodeJS
 ${txtstyle}10  - Google Chrome
 ${txtstyle}11  - Virtual Box 5.2
 ${txtstyle}12  - F.lux
-${txtstyle}13  - Arc Theme & Icons
-${txtstyle}14  - PhotoGIMP by Diolinux
-${txtstyle}15  - Visual Studio Code
+${txtstyle}13  - Redshift
+${txtstyle}14  - Arc Theme & Icons
+${txtstyle}15  - PhotoGIMP by Diolinux
+${txtstyle}16  - Visual Studio Code
 ${txtstyle}88  - Others (vim, unrar, etc...)
 ${txtstyle}99  - Manual installation
 ${txtstyle}100 - Update All
@@ -57,9 +58,10 @@ ${red}========================================${reset}"
     10) chrome ;;
     11) vb ;;
     12) flux ;;
-    13) arc ;;
-    14) photogimp ;;
-    15) vscode ;;
+    13) redshift ;;
+    14) arc ;;
+    15) photogimp ;;
+    16) vscode ;;
     88) others ;;
     99) manual ;;
     100) update ;;
@@ -183,6 +185,10 @@ flux(){
     sudo apt-get update
     sudo apt-get -y install -y fluxgui git python-appindicator python-xdg python-pexpect python-gconf python-gtk2 python-glade2 libxxf86vm1 #f.lux + dependencies for Ubuntu/Debian
     menu
+}
+
+redshift(){
+    sudo apt-get -y install redshift redshift-gtk
 }
 
 arc(){
