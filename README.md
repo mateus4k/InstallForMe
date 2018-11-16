@@ -12,10 +12,11 @@ That's an installer of my usual softwares for Debian-based distributions.
 	  - Dropbox (Nautilus and [Headless](https://www.dropbox.com/install?_tk=uj_merlin))
 	  - Spotify
 	  - Google Chrome
-	  -  Virtual Box 5.2
+	  - Virtual Box 5.2
 	  - Cisco Packet Tracer 7.1
-      - F.lux
-      - Redshift
+          - F.lux
+          - Redshift
+	  - Synapse
 
   - Programming
 	  - Sublime Text 3
@@ -24,7 +25,7 @@ That's an installer of my usual softwares for Debian-based distributions.
 
   - Customization
 	  -  Zsh + Oh-My-Zsh
-      - Arc Theme & Icons
+          - Arc Theme & Icons
 	  - GIMP + PhotoGIMP 2017 by [Diolinux](https://www.diolinux.com.br/2017/04/photogimp-20171-gimp-photoshop-theme-download.html)
 
 ### Others

@@ -65,11 +65,11 @@ ${red}========================================${reset}"
     88) others ;;
     99) manual ;;
     100) update ;;
-    0)  echo "${txtstyle}Exiting..."
+    0)  echo -e "${txtstyle}Exiting..."
         sleep 1
         exit ;;
-    *) echo "${txtstyle}Unknown option..."
-        echo "${txtstyle}Returning to menu..."
+    *) echo -e "${txtstyle}Unknown option..."
+        echo -e "${txtstyle}Returning to menu..."
         sleep 2
         menu ;;
     esac
@@ -84,6 +84,7 @@ dropbox(){
     else
 	    cd ~ &&  wget -qO - "https://www.dropbox.com/download?plat=lnx.x86_64" --show-progress | tar xzf -; ~/.dropbox-dist/dropboxd &
     fi
+    echo -e "${txtstyle}~/.dropbox-dist/dropboxdi${reset} to run dropbox";
     menu
 }
 
@@ -176,7 +177,7 @@ chrome(){
 
 vb(){
     sudo apt-get update
-    sudo apt-get install -y virtualbox-5.2
+    sudo apt-get install -y virtualbox
     menu
 }
 
@@ -251,7 +252,7 @@ vscode(){
 }
 
 others(){
-    sudo apt install -y gedit vim neofetch unrar ttf-mscorefonts-installer transmission
+    sudo apt install -y gedit vim neofetch unrar ttf-mscorefonts-installer transmission synapse
     sudo fc-cache
     menu
 }
