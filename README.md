@@ -8,6 +8,7 @@ That's an installer of my usual softwares for Debian-based distributions.
 [s3]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
 
 ## Software List
+
   - Utilities
 	  - Dropbox (Nautilus and [Headless](https://www.dropbox.com/install?_tk=uj_merlin))
 	  - Spotify
@@ -15,8 +16,8 @@ That's an installer of my usual softwares for Debian-based distributions.
 	  - Telegram Desktop
 	  - Virtual Box 5.2
 	  - Cisco Packet Tracer 7.1
-          - F.lux
-          - Redshift
+       	  - F.lux
+      	  - Redshift
 	  - Synapse
 
   - Programming
@@ -27,7 +28,7 @@ That's an installer of my usual softwares for Debian-based distributions.
 
   - Customization
 	  - Zsh + Oh-My-Zsh
-          - Arc Theme & Icons
+	  - Arc Theme & Icons
 	  - GIMP + PhotoGIMP 2017 by [Diolinux](https://www.diolinux.com.br/2017/04/photogimp-20171-gimp-photoshop-theme-download.html)
 
 ### Others
@@ -44,6 +45,7 @@ That's an installer of my usual softwares for Debian-based distributions.
   - Manual installation & easy update tool
 
 ## Installation
+
 ```sh
 $ git clone https://github.com/mateus4k/installforme
 $ cd installforme/
