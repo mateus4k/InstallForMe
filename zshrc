@@ -33,10 +33,14 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias ll="ls -la"
 alias la="ls -a"
+alias dropbox="~/.dropbox-dist/dropboxd &"
+alias xampp="sudo /opt/lampp/xampp"
 
 # Hashes to most used dirs.
 setopt cdablevars
 hash -d down="$HOME/Downloads/"
+hash -d ufersa="$HOME/Dropbox/UFERSA/"
+hash -d ifrn="$HOME/Dropbox/IFRN/"
 
 # Search history of typed command with up/down keys
 bindkey "${terminfo[kcuu1]}" up-line-or-search
