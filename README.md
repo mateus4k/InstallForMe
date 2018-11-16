@@ -22,6 +22,7 @@ That's an installer of my usual softwares for Debian-based distributions.
 	  - Sublime Text 3
 	  - Visual Studio Code
 	  - NodeJS LTS
+	  - Xampp
 
   - Customization
 	  -  Zsh + Oh-My-Zsh
