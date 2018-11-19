@@ -16,16 +16,12 @@ That's an installer of my usual softwares for Debian-based distributions.
 	  - Telegram Desktop
 	  - Virtual Box 5.2
 	  - Cisco Packet Tracer 7.1
-<<<<<<< HEAD
 	  - F.lux
 	  - Redshift
-=======
-      - F.lux
-      - Redshift
->>>>>>> fb3961cb5539636099f1bf127dc91eee78ebeff3
-	  - Synapse
+          - Synapse
 
   - Programming
+	  - Vim
 	  - Sublime Text 3
 	  - Visual Studio Code
 	  - NodeJS LTS
