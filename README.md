@@ -18,7 +18,7 @@ That's an installer of my usual softwares for Debian-based distributions.
 	  - Cisco Packet Tracer 7.1
 	  - F.lux
 	  - Redshift
-          - Synapse
+	  - Synapse
 
   - Programming
 	  - Vim
