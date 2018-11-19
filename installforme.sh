@@ -226,7 +226,7 @@ arc(){
         echo -e "${txtstyle}Invalid option!";
         sleep 2
     fi
-menu
+    menu
 }
 
 photogimp(){
@@ -272,6 +272,7 @@ telegram(){
 
     # remove the original file
     rm -f telegram.tar.xz
+    menu
 }
 
 xampp(){
@@ -282,6 +283,8 @@ xampp(){
     sudo cp /usr/share/applications/xampp.desktop ~/Desktop
     sudo ./xampp-installer.run
     echo -e "${txtsyle}sudo /opt/lampp/lampp start${reset} to run"
+    menu
+    rm -f ./xampp-installer.run
 }
 
 others(){

@@ -16,8 +16,8 @@ That's an installer of my usual softwares for Debian-based distributions.
 	  - Telegram Desktop
 	  - Virtual Box 5.2
 	  - Cisco Packet Tracer 7.1
-       	  - F.lux
-      	  - Redshift
+	  - F.lux
+	  - Redshift
 	  - Synapse
 
   - Programming
