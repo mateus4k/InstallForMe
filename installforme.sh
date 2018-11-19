@@ -7,7 +7,6 @@ green='\033[1;32m'
 blue='\033[1;34m'
 yellow='\033[1;33m'
 reset='\e[0m'
-bold='\033[01;37m'
 txtstyle='  \033[1;31m>>\e[0m  '
 
 # header and menu
@@ -33,8 +32,7 @@ ${txtstyle}15  - PhotoGIMP by Diolinux
 ${txtstyle}16  - Visual Studio Code
 ${txtstyle}17  - Telegram Desktop
 ${txtstyle}18  - Xampp
-${txtstyle}88  - Others (vim, unrar, etc...)
-${txtstyle}99  - Manual installation
+${txtstyle}99  - Others (vim, unrar, etc...)
 ${txtstyle}100 - Update All
 ${txtstyle}0   - Exit
 ${red}========================================${reset}"
@@ -68,8 +66,7 @@ ${red}========================================${reset}"
     16) vscode ;;
     17) telegram ;;
     18) xampp ;;
-    88) others ;;
-    99) manual ;;
+    99) others ;;
     100) update ;;
     0) echo -e "${txtstyle}Exiting..."
        sleep 1
@@ -287,14 +284,6 @@ xampp(){
 others(){
     sudo apt install -y gedit vim neofetch unrar ttf-mscorefonts-installer transmission synapse
     sudo fc-cache
-    menu
-}
-
-manual(){
-    echo -e "${txtstyle}Enter the program that you wanna install [Ex.: ${red}sqlite3{$reset}]"
-    echo -ne "${txtstyle}(Maybe it isn't in the local repository...): "
-    read program
-    sudo apt-get install -y $program
     menu
 }
 
