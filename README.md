@@ -16,8 +16,13 @@ That's an installer of my usual softwares for Debian-based distributions.
 	  - Telegram Desktop
 	  - Virtual Box 5.2
 	  - Cisco Packet Tracer 7.1
+<<<<<<< HEAD
 	  - F.lux
 	  - Redshift
+=======
+      - F.lux
+      - Redshift
+>>>>>>> fb3961cb5539636099f1bf127dc91eee78ebeff3
 	  - Synapse
 
   - Programming
@@ -42,7 +47,6 @@ That's an installer of my usual softwares for Debian-based distributions.
   - Unrar
   - [Arial Microsoft Font](https://www.vivaolinux.com.br/artigo/Fontes-da-Microsoft-Instalacao-no-Ubuntu-e-Fedora)
   - Transmission
-  - Manual installation & easy update tool
 
 ## Installation
 
@@ -56,7 +60,7 @@ $ ./installforme.sh
 ## Development
 
 Want to contribute? Great!
-Please refer to each project's style guidelines and guidelines for submitting patches and additions. In general, we follow the "fork-and-pull" Git workflow.
+
 1. **Fork** the repo on GitHub
 2. **Clone** the project to your own machine
 3. **Commit** changes to your own branch
