@@ -179,8 +179,7 @@ chrome(){
 }
 
 vb(){
-    sudo apt-get update
-    sudo apt-get install -y virtualbox
+    wget https://download.virtualbox.org/virtualbox/5.2.22/virtualbox-5.2_5.2.22-126460~Ubuntu~bionic_amd64.deb -O virtualbox.deb; sudo dpkg -i virtualbox.deb; rm -f virtualbox.deb
     menu
 }
 
