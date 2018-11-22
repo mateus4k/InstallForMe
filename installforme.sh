@@ -36,8 +36,6 @@ ${txtstyle}99  - Others (vim, unrar, etc...)
 ${txtstyle}100 - Update All
 ${txtstyle}0   - Exit
 ${red}========================================${reset}"
-    
-    sleep 0.5
     echo -ne "${yellow}>> YOUR CHOISE: ${reset}"
     read choise
 
@@ -69,11 +67,10 @@ ${red}========================================${reset}"
     99) others ;;
     100) update ;;
     0) echo -e "${txtstyle}Exiting..."
-       sleep 1
        exit ;;
     *) echo -e "${txtstyle}Unknown option..."
        echo -e "${txtstyle}Returning to menu..."
-       sleep 2
+       sleep 1
        menu ;;
     esac
 }
@@ -132,7 +129,6 @@ packettracer(){
     mkdir ciscopacket
     cd ciscopacket
     wget -c http://www.labcisco.com.br/app/Cisco-PT-71-x64.tar.gz -O ciscopacket.tar.gz
-    sleep 1
     tar -xzvf ciscopacket.tar.gz
     sudo ./install
     cd
@@ -180,7 +176,14 @@ chrome(){
 }
 
 vb(){
-    wget https://download.virtualbox.org/virtualbox/5.2.22/virtualbox-5.2_5.2.22-126460~Ubuntu~bionic_amd64.deb -O virtualbox.deb; sudo dpkg -i virtualbox.deb; rm -f virtualbox.deb
+    echo "deb https://download.virtualbox.org/virtualbox/debian bionic contrib" | sudo tee /etc/apt/sources.list.d/oracle-virtualbox-bionic.list 
+    
+    # downloading and registering
+    wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+    wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+    
+    sudo apt-get -y update
+    sudo apt-get -y install virtualbox-5.2
     menu
 }
 
@@ -221,7 +224,7 @@ arc(){
 
     else
         echo -e "${txtstyle}Invalid option!";
-        sleep 2
+        sleep 1
     fi
     menu
 }
@@ -280,8 +283,8 @@ xampp(){
     sudo cp /usr/share/applications/xampp.desktop ~/Desktop
     sudo ./xampp-installer.run
     echo -e "${txtsyle}sudo /opt/lampp/lampp start${reset} to run"
-    menu
     rm -f ./xampp-installer.run
+    menu
 }
 
 others(){
@@ -291,10 +294,10 @@ others(){
 }
 
 update(){
-    sudo apt update
-    sudo apt upgrade -y
-    sudo apt autoremove -y
-    sudo apt autoclean
-    menu
+    sudo apt-get -y update
+    sudo apt-get -y dist-upgrade
+    sudo apt-get -y upgrade
+    sudo apt-get -y autoremove
+    sudo apt-get -y autoclean
 }
 menu
