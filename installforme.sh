@@ -32,6 +32,7 @@ ${txtstyle}15  - PhotoGIMP by Diolinux
 ${txtstyle}16  - Visual Studio Code
 ${txtstyle}17  - Telegram Desktop
 ${txtstyle}18  - Xampp
+${txtstyle}19  - Atom
 ${txtstyle}99  - Others (vim, unrar, etc...)
 ${txtstyle}100 - Update All
 ${txtstyle}0   - Exit
@@ -64,6 +65,7 @@ ${red}========================================${reset}"
     16) vscode ;;
     17) telegram ;;
     18) xampp ;;
+    19) atom ;;
     99) others ;;
     100) update ;;
     0) echo -e "${txtstyle}Exiting..."
@@ -80,7 +82,7 @@ dropbox(){
     read drop
 
     if [ "$drop" = "Nautilus" ] || [ "$drop" = "nautilus" ]; then
-	sudo apt-get install -y nautilus-dropbox	
+	sudo apt-get install -y nautilus-dropbox
     else
 	cd ~ &&  wget -qO - "https://www.dropbox.com/download?plat=lnx.x86_64" --show-progress | tar xzf -; ~/.dropbox-dist/dropboxd &
     fi
@@ -103,7 +105,7 @@ pdfpc(){
 psensor(){
     sudo apt-get install -y lm-sensors
     sudo sensors-detect
-    sudo apt-get install -y psensor  
+    sudo apt-get install -y psensor
     menu
 }
 
@@ -142,11 +144,11 @@ zsh(){
     sudo rm -rf ~/.oh-my-zsh
 
     # download oh-my-zsh
-    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 
+    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
     # download plugin autosuggestions
     git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-    
+
     # install agnoster theme font
     sudo apt install -y fonts-powerline
 
@@ -155,7 +157,7 @@ zsh(){
 
     if [ "$SHELL" != "/bin/zsh" ]; then
 	# for root
-	sudo usermod -s $(which zsh) root 
+	sudo usermod -s $(which zsh) root
 
 	# for current user
 	sudo usermod -s $(which zsh) ${USER}
@@ -176,12 +178,12 @@ chrome(){
 }
 
 vb(){
-    echo "deb https://download.virtualbox.org/virtualbox/debian bionic contrib" | sudo tee /etc/apt/sources.list.d/oracle-virtualbox-bionic.list 
-    
+    echo "deb https://download.virtualbox.org/virtualbox/debian bionic contrib" | sudo tee /etc/apt/sources.list.d/oracle-virtualbox-bionic.list
+
     # downloading and registering
     wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
     wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
-    
+
     sudo apt-get -y update
     sudo apt-get -y install virtualbox-5.2
     menu
@@ -230,8 +232,8 @@ arc(){
 }
 
 photogimp(){
-    #install gimp    
-    sudo apt-get install -y gimp    
+    #install gimp
+    sudo apt-get install -y gimp
 
     #backuping GIMP old data
     gimp_bkp="/home/${USER}/.gimp-2.8"
@@ -241,7 +243,7 @@ photogimp(){
         sudo mv "${gimp_bkp}" "/home/${USER}/.gimp-2.8.old"
         echo -e "${txtstyle}Sucessfull! Your GIMP backup is in ${yellow}/home/$USER/.gimp-2.8.old${reset}";
     fi
-    
+
     #downloading photogimp
     echo -e "${txtstyle}Downloading PhotoGIMP!"
     wget -q "https://github.com/mateus4k/InstallForMe/blob/photogimp/gimp-2.8.tar.bz2?raw=true" -O "/home/$USER/gimp-2.8.tar.bz2" --show-progress
@@ -258,7 +260,7 @@ vscode(){
 }
 
 telegram(){
-    # download telegram desktop	
+    # download telegram desktop
     wget https://updates.tdesktop.com/tlinux/tsetup.1.4.3.tar.xz -O telegram.tar.xz;
 
     # uncompress and move the folder
@@ -285,6 +287,16 @@ xampp(){
     echo -e "${txtsyle}sudo /opt/lampp/lampp start${reset} to run"
     rm -f ./xampp-installer.run
     menu
+}
+
+atom(){
+    # add official package repository
+    curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
+    sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
+    sudo apt-get update
+
+    # install atom
+    sudo apt-get -y install atom
 }
 
 others(){

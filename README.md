@@ -24,6 +24,7 @@ That's an installer of my usual softwares for Debian-based distributions.
 	  - Vim
 	  - Sublime Text 3
 	  - Visual Studio Code
+    - Atom
 	  - NodeJS LTS
 	  - Xampp
 
