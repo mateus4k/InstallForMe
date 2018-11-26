@@ -33,6 +33,7 @@ ${txtstyle}16  - Visual Studio Code
 ${txtstyle}17  - Telegram Desktop
 ${txtstyle}18  - Xampp
 ${txtstyle}19  - Atom
+${txtstyle}20  - Bookworm (eBook Reader)
 ${txtstyle}99  - Others (vim, unrar, etc...)
 ${txtstyle}100 - Update All
 ${txtstyle}0   - Exit
@@ -66,6 +67,7 @@ ${red}========================================${reset}"
     17) telegram ;;
     18) xampp ;;
     19) atom ;;
+	20) bookworm ;;
     99) others ;;
     100) update ;;
     0) echo -e "${txtstyle}Exiting..."
@@ -297,6 +299,13 @@ atom(){
 
     # install atom
     sudo apt-get -y install atom
+}
+
+bookworm(){
+	sudo add-apt-repository ppa:bookworm-team/bookworm -y
+	sudo add-apt-repository ppa:elementary-os/stable -y
+	sudo apt-get -y update
+	sudo apt-get install libgranite5 bookworm
 }
 
 others(){
