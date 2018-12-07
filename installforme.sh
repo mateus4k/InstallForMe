@@ -21,7 +21,7 @@ ${txtstyle}4   - PSensor
 ${txtstyle}5   - Spotify
 ${txtstyle}6   - Sublime Text
 ${txtstyle}7   - Cisco Packet Tracer 7.1
-${txtstyle}8   - Oh-My-Zsh
+${txtstyle}8   - Oh-My-Zsh + Vim (dotfiles)
 ${txtstyle}9   - NodeJS
 ${txtstyle}10  - Google Chrome
 ${txtstyle}11  - Virtual Box 5.2
@@ -55,7 +55,7 @@ ${red}========================================${reset}"
     5) spotify ;;
     6) sublime ;;
     7) packettracer ;;
-    8) zsh ;;
+    8) zsh;;
     9) nodejs ;;
     10) chrome ;;
     11) vb ;;
@@ -138,6 +138,16 @@ packettracer(){
     cd
     menu
 }
+
+
+vim(){ #by SergioPrado.org
+    sudo apt-get -y install vim
+    git clone https://github.com/sergioprado/dotfiles.git
+    cp dotfiles/vimrc ~/.vimrc
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    vim +PluginInstall +qall
+}
+
 
 zsh(){
     sudo apt install -y zsh
@@ -305,11 +315,11 @@ bookworm(){
 	sudo add-apt-repository ppa:bookworm-team/bookworm -y
 	sudo add-apt-repository ppa:elementary-os/stable -y
 	sudo apt-get -y update
-	sudo apt-get install libgranite5 bookworm
+	sudo apt-get -y install libgranite5 bookworm
 }
 
 others(){
-    sudo apt install -y gedit vim neofetch unrar ttf-mscorefonts-installer transmission synapse
+    sudo apt-get -y install gedit neofetch unrar ttf-mscorefonts-installer transmission synapse
     sudo fc-cache
     menu
 }
