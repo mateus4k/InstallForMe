@@ -23,7 +23,7 @@ That's an installer of my usual softwares for Debian-based distributions.
       - Net-tools
 
   - Programming
-	  - Vim
+	  - Vim (with dotfiles by [Sérgio Prado](https://sergioprado.org/configurando-o-vim-como-ide-para-desenvolver-aplicacoes-em-cc/))
 	  - Sublime Text 3
 	  - Visual Studio Code
     - Atom
