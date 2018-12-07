@@ -319,7 +319,7 @@ bookworm(){
 }
 
 others(){
-    sudo apt-get -y install gedit neofetch unrar ttf-mscorefonts-installer transmission synapse
+    sudo apt-get -y install gedit neofetch unrar ttf-mscorefonts-installer transmission synapse net-tools
     sudo fc-cache
     menu
 }

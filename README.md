@@ -20,6 +20,7 @@ That's an installer of my usual softwares for Debian-based distributions.
 	  - Redshift
 	  - Synapse
 	  - Bookworm (eBook Reader)
+      - Net-tools
 
   - Programming
 	  - Vim
