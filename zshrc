@@ -39,8 +39,8 @@ alias xampp="sudo /opt/lampp/xampp"
 # Hashes to most used dirs.
 setopt cdablevars
 hash -d down="$HOME/Downloads/"
-hash -d ufersa="$HOME/Dropbox/UFERSA/"
-hash -d ifrn="$HOME/Dropbox/IFRN/"
+hash -d ufersa="$HOME/Dropbox/ufersa/"
+hash -d ifrn="$HOME/Dropbox/ifrn/"
 
 # Search history of typed command with up/down keys
 bindkey "${terminfo[kcuu1]}" up-line-or-search
