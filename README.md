@@ -20,13 +20,14 @@ That's an installer of my usual softwares for Debian-based distributions.
 	  - Redshift
 	  - Synapse
 	  - Bookworm (eBook Reader)
-      - Net-tools
+	  - Net-tools
+	  - Wine
 
   - Programming
 	  - Vim (with dotfiles by [Sérgio Prado](https://sergioprado.org/configurando-o-vim-como-ide-para-desenvolver-aplicacoes-em-cc/))
 	  - Sublime Text 3
 	  - Visual Studio Code
-    - Atom
+	  - Atom
 	  - NodeJS LTS
 	  - Xampp
 
