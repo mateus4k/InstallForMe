@@ -35,6 +35,7 @@ alias ll="ls -la"
 alias la="ls -a"
 alias dropbox="~/.dropbox-dist/dropboxd &"
 alias xampp="sudo /opt/lampp/xampp"
+alias brilho="xrandr --output LVDS-1 --brightness"
 
 # Hashes to most used dirs.
 setopt cdablevars
