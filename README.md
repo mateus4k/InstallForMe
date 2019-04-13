@@ -19,7 +19,6 @@ That's an installer of my usual softwares for Debian-based distributions.
 	  - F.lux
 	  - Redshift
 	  - Synapse
-	  - Bookworm (eBook Reader)
 	  - Net-tools
 	  - Wine
 
