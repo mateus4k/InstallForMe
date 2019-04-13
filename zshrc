@@ -25,7 +25,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 # Sourcing oh-my-zsh
 source $ZSH/oh-my-zsh.sh
