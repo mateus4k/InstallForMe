@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="agnoster"
+ZSH_THEME="gnzh" #or "agnoster"
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
@@ -12,7 +12,8 @@ CASE_SENSITIVE="true"
 EDITOR=vim
 
 # Sourcing oh-my-zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Comment this out to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
@@ -34,14 +35,13 @@ source $ZSH/oh-my-zsh.sh
 alias ll="ls -la"
 alias la="ls -a"
 alias dropbox="~/.dropbox-dist/dropboxd &"
-alias xampp="sudo /opt/lampp/xampp"
+alias xampp="/opt/lampp/xampp"
 alias brilho="xrandr --output LVDS-1 --brightness"
 
 # Hashes to most used dirs.
 setopt cdablevars
 hash -d down="$HOME/Downloads/"
 hash -d ufersa="$HOME/Dropbox/ufersa/"
-hash -d ifrn="$HOME/Dropbox/ifrn/"
 
 # Search history of typed command with up/down keys
 bindkey "${terminfo[kcuu1]}" up-line-or-search

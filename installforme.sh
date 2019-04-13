@@ -21,7 +21,7 @@ ${txtstyle}4   - PSensor
 ${txtstyle}5   - Spotify
 ${txtstyle}6   - Sublime Text
 ${txtstyle}7   - Cisco Packet Tracer 7.1
-${txtstyle}8   - Oh-My-Zsh + Vim (dotfiles)
+${txtstyle}8   - Oh-My-Zsh
 ${txtstyle}9   - NodeJS
 ${txtstyle}10  - Google Chrome
 ${txtstyle}11  - Virtual Box 5.2
@@ -33,9 +33,9 @@ ${txtstyle}16  - Visual Studio Code
 ${txtstyle}17  - Telegram Desktop
 ${txtstyle}18  - Xampp
 ${txtstyle}19  - Atom
-${txtstyle}20  - Bookworm (eBook Reader)
-${txtstyle}21  - Wine
-${txtstyle}99  - Others (vim, unrar, etc...)
+${txtstyle}20  - Wine
+${txtstyle}98  - Vim (dotfiles)
+${txtstyle}99  - Others (gedit, unrar, etc...)
 ${txtstyle}100 - Update All
 ${txtstyle}0   - Exit
 ${red}========================================${reset}"
@@ -68,8 +68,8 @@ ${red}========================================${reset}"
     17) telegram ;;
     18) xampp ;;
     19) atom ;;
-    20) bookworm ;;
-    21) wine ;;
+    20) wine ;;
+    98) vim ;;
     99) others ;;
     100) update ;;
     0) echo -e "${txtstyle}Exiting..."
@@ -160,9 +160,10 @@ zsh(){
     # download oh-my-zsh
     git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
-    # download plugin autosuggestions
-	git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions  
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+    # download plugin autosuggestions & syntax-highlighting
+	git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
+
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
 
     # install agnoster theme font
     sudo apt install -y fonts-powerline
@@ -312,13 +313,6 @@ atom(){
 
     # install atom
     sudo apt-get -y install atom
-}
-
-bookworm(){
-    sudo add-apt-repository ppa:bookworm-team/bookworm -y
-    sudo add-apt-repository ppa:elementary-os/stable -y
-    sudo apt-get -y update
-    sudo apt-get -y install libgranite5 bookworm
 }
 
 wine(){
