@@ -214,6 +214,7 @@ flux(){
 
 redshift(){
     sudo apt-get -y install redshift redshift-gtk
+    cp redshift.conf ~/.config
 }
 
 arc(){
