@@ -34,6 +34,7 @@ ${txtstyle}17  - Telegram Desktop
 ${txtstyle}18  - Xampp
 ${txtstyle}19  - Atom
 ${txtstyle}20  - Wine
+${txtstyle}21  - PHP + Composer
 ${txtstyle}98  - Vim (dotfiles)
 ${txtstyle}99  - Others (gedit, unrar, etc...)
 ${txtstyle}100 - Update All
@@ -69,6 +70,7 @@ ${red}========================================${reset}"
     18) xampp ;;
     19) atom ;;
     20) wine ;;
+    21) php ;;
     98) vim ;;
     99) others ;;
     100) update ;;
@@ -148,6 +150,7 @@ vim(){ #by SergioPrado.org
     cp dotfiles/vimrc ~/.vimrc
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
+    menu
 }
 
 
@@ -215,6 +218,7 @@ flux(){
 redshift(){
     sudo apt-get -y install redshift redshift-gtk
     cp redshift.conf ~/.config
+    menu
 }
 
 arc(){
@@ -314,6 +318,7 @@ atom(){
 
     # install atom
     sudo apt-get -y install atom
+    menu
 }
 
 wine(){
@@ -321,6 +326,12 @@ wine(){
     sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main'
     sudo apt-get -y update
     sudo apt-get install --install-recommends winehq-stable
+    menu
+}
+
+php(){
+    sudo apt-get -y install php php7.2-mbstring php-xml php7.2-zip composer
+    menu
 }
 
 others(){
