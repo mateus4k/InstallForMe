@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="gnzh" #or "agnoster"
+ZSH_THEME="dracula"
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"

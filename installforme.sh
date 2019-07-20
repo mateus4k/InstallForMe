@@ -147,9 +147,9 @@ packettracer(){
 vim(){ #by SergioPrado.org
     sudo apt-get -y install vim
     git clone https://github.com/sergioprado/dotfiles.git
-    cp dotfiles/vimrc ~/.vimrc
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    vim +PluginInstall +qall
+	sudo cp dotfiles/vimrc ~/.vimrc
+#    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+#    vim +PluginInstall +qall
     menu
 }
 
@@ -163,10 +163,18 @@ zsh(){
     # download oh-my-zsh
     git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
-    # download plugin autosuggestions & syntax-highlighting
+    # download autosuggestions plugin
 	git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions
 
+    # download syntax-highlighting plugin 
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
+
+    # download dracula theme 
+	git clone https://github.com/dracula/zsh.git dracula
+	sudo mv dracula/dracula.zsh-theme ~/.oh-my-zsh/themes/
+	mkdir ~/.oh-my-zsh/themes/lib/
+	sudo mv dracula/lib/* ~/.oh-my-zsh/themes/lib/     
+	rm -rf dracula
 
     # install agnoster theme font
     sudo apt install -y fonts-powerline
@@ -174,13 +182,12 @@ zsh(){
     # install zsh config file
     sudo cp zshrc ~/.zshrc
 
-    if [ "$SHELL" != "/bin/zsh" ]; then
 	# for root
 	sudo usermod -s $(which zsh) root
 
 	# for current user
 	sudo usermod -s $(which zsh) ${USER}
-    fi
+
     menu
 }
 
@@ -346,5 +353,6 @@ update(){
     sudo apt-get -y upgrade
     sudo apt-get -y autoremove
     sudo apt-get -y autoclean
+	menu
 }
 menu
