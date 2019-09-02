@@ -1,5 +1,5 @@
 # Install for Me!
-That's an installer of my usual softwares for Debian-based distributions.
+:wrench: A personal app for my usual installations
 
 ![HitCount][s1] ![issues][s2] ![contributions][s3]
 
@@ -7,47 +7,7 @@ That's an installer of my usual softwares for Debian-based distributions.
 [s2]: https://img.shields.io/github/issues/mateus4k/InstallForMe.svg
 [s3]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
 
-## Software List
-
-  - Utilities
-	  - Dropbox (Nautilus and [Headless](https://www.dropbox.com/install?_tk=uj_merlin))
-	  - Spotify
-	  - Google Chrome
-	  - Telegram Desktop
-	  - Virtual Box 5.2
-	  - Cisco Packet Tracer 7.1
-	  - F.lux
-	  - Redshift
-	  - Synapse
-	  - Net-tools
-	  - Wine
-
-  - Programming
-	  - Vim (with dotfiles by [Sérgio Prado](https://sergioprado.org/configurando-o-vim-como-ide-para-desenvolver-aplicacoes-em-cc/))
-	  - Sublime Text 3
-	  - Visual Studio Code
-	  - Atom
-	  - NodeJS LTS
-	  - Xampp
-
-  - Customization
-	  - Zsh + Oh-My-Zsh
-	  - Arc Theme & Icons
-	  - GIMP + PhotoGIMP 2017 by [Diolinux](https://www.diolinux.com.br/2017/04/photogimp-20171-gimp-photoshop-theme-download.html)
-
-### Others
-
-  - ffmpeg
-  - PDF - Presenter Console
-  - PSensor
-  - Gedit
-  - Vim
-  - Neofetch
-  - Unrar
-  - [Arial Microsoft Font](https://www.vivaolinux.com.br/artigo/Fontes-da-Microsoft-Instalacao-no-Ubuntu-e-Fedora)
-  - Transmission
-
-## Installation
+## Install
 
 ```sh
 $ git clone https://github.com/mateus4k/installforme
