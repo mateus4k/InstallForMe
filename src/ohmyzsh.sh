@@ -15,12 +15,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plug
 # syntax-highlighting plugin
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
 
-# dracula theme
-git clone https://github.com/dracula/zsh.git dracula
-sudo mv dracula/dracula.zsh-theme ~/.oh-my-zsh/themes/
-mkdir ~/.oh-my-zsh/themes/lib/
-sudo mv dracula/lib/* ~/.oh-my-zsh/themes/lib/
-rm -rf dracula
+# spaceship theme
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 # install zsh config file
 sudo cp zshrc ~/.zshrc
