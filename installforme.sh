@@ -28,7 +28,7 @@ ${arrowOk}2 - Visual Studio Code
 ${arrowOk}3 - NodeJS
 ${arrowOk}4 - PHP + Composer
 ${arrowOk}5 - Xampp
-${arrowOk}6 - Vim (dotfiles)
+${arrowOk}6 - Vim
 
 Apps
 ${arrowOk}7 - Dropbox
@@ -37,15 +37,12 @@ ${arrowOk}9 - Telegram Desktop
 
 Linux
 ${arrowOk}10 - Oh-My-Zsh
-${arrowOk}11 - Virtual Box 6.0
-${arrowOk}12 - Wine
-${arrowOk}13 - Arc Theme & Icons
-${arrowOk}14 - PhotoGIMP by Diolinux
-${arrowOk}15 - F.lux
-${arrowOk}16 - Redshift
+${arrowOk}11 - PhotoGIMP by Diolinux
+${arrowOk}12 - F.lux
+${arrowOk}13 - Redshift
 
 Others
-${arrowOk}17 - Others (gedit, unrar, etc...)
+${arrowOk}14 - Others (gedit, unrar, etc...)
 ${arrowOk}99 - Update All
 ${arrowOk}0  - Exit
 ${red}========================================${reset}"
@@ -70,13 +67,10 @@ ${red}========================================${reset}"
     8) source src/spotify.sh ;;
     9) source src/telegram.sh ;;
     10) source src/ohmyzsh.sh ;;
-    11) source src/virtualbox.sh ;;
-    12) source src/wine.sh ;;
-    13) source src/arc.sh ;;
-    14) source src/photogimp.sh ;;
-    15) source src/flux.sh ;;
-    16) source src/redshift.sh ;;
-    17) source src/others.sh ;;
+    11) source src/photogimp.sh ;;
+    12) source src/flux.sh ;;
+    13) source src/redshift.sh ;;
+    14) source src/others.sh ;;
     99) source src/update.sh ;;
     0)
         echo -e "${clean}Exiting..."
